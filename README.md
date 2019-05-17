@@ -1,2 +1,1 @@
-# myGitbook
-Outputing is Learning
+# Outputing is Learning

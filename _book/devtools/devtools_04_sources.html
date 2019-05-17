@@ -1,0 +1,565 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第四篇-Sources面板 · ScarSu's Gitbook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ScarSu">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../src/css/website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="devtools_05_network.html" />
+    
+    
+    <link rel="prev" href="devtools_03_console.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"scarsu","repo":"myGitbook","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <a target="_blank" href="https://www.scarsu.com">
+            
+                    
+                    我的博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                     关于本书
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Devtools新手入门</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="devtools_intro_share.html">
+            
+                <a href="devtools_intro_share.html">
+            
+                    
+                    Devtools入门概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Devtools老司机养成</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="devtools_01_intro.html">
+            
+                <a href="devtools_01_intro.html">
+            
+                    
+                    第一篇-介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="devtools_02_elements.html">
+            
+                <a href="devtools_02_elements.html">
+            
+                    
+                    第二篇-Elements面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="devtools_03_console.html">
+            
+                <a href="devtools_03_console.html">
+            
+                    
+                    第三篇-Console面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.4" data-path="devtools_04_sources.html">
+            
+                <a href="devtools_04_sources.html">
+            
+                    
+                    第四篇-Sources面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="devtools_05_network.html">
+            
+                <a href="devtools_05_network.html">
+            
+                    
+                    第五篇-Network面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="devtools_06_performance.html">
+            
+                <a href="devtools_06_performance.html">
+            
+                    
+                    第六篇-Performance面板与性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="devtools_07_memory.html">
+            
+                <a href="devtools_07_memory.html">
+            
+                    
+                    第七篇-Memory面板与内存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="vm_in_devtools.html">
+            
+                <a href="vm_in_devtools.html">
+            
+                    
+                    番外篇-Devtools中的'VM'
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第四篇-Sources面板</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x56DB;&#x7BC7;-sources-&#x6E90;&#x6587;&#x4EF6;&#x9762;&#x677F;"><b></b>Devtools &#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x56DB;&#x7BC7;-Sources &#x6E90;&#x6587;&#x4EF6;&#x9762;&#x677F;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6982;&#x89C8;"><b></b>&#x6982;&#x89C8;</a></li><li><span class="title-icon "></span><a href="#&#x4E03;&#x79CD;&#x65AD;&#x70B9;&#x7C7B;&#x578B;"><b></b>&#x4E03;&#x79CD;&#x65AD;&#x70B9;&#x7C7B;&#x578B;</a></li><li><span class="title-icon "></span><a href="#debug"><b></b>Debug</a></li><li><span class="title-icon "></span><a href="#devtools-nodejs-debug"><b></b>Devtools Nodejs debug</a></li><li><span class="title-icon "></span><a href="#blackbox"><b></b>BlackBox</a></li><li><span class="title-icon "></span><a href="#workspace&#xFF1A;devtools-as-ide-&#x5C06;&#x66F4;&#x6539;&#x6301;&#x4E45;&#x5316;"><b></b>Workspace&#xFF1A;Devtools as IDE &#x5C06;&#x66F4;&#x6539;&#x6301;&#x4E45;&#x5316;</a></li><li><span class="title-icon "></span><a href="#source-map"><b></b>Source Map</a></li><li><span class="title-icon "></span><a href="#local-overrides"><b></b>Local Overrides</a></li><li><span class="title-icon "></span><a href="#snippets-&#x4EE3;&#x7801;&#x7247;&#x6BB5;"><b></b>Snippets &#x4EE3;&#x7801;&#x7247;&#x6BB5;</a></li><li><span class="title-icon "></span><a href="#content-scripts"><b></b>Content scripts</a></li></ul></ul></div><a href="#devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x56DB;&#x7BC7;-sources-&#x6E90;&#x6587;&#x4EF6;&#x9762;&#x677F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x56DB;&#x7BC7;-sources-&#x6E90;&#x6587;&#x4EF6;&#x9762;&#x677F;"><a name="devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x56DB;&#x7BC7;-sources-&#x6E90;&#x6587;&#x4EF6;&#x9762;&#x677F;" class="anchor-navigation-ex-anchor" href="#devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x56DB;&#x7BC7;-sources-&#x6E90;&#x6587;&#x4EF6;&#x9762;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x56DB;&#x7BC7;-sources-&#x6E90;&#x6587;&#x4EF6;&#x9762;&#x677F;" class="plugin-anchor" href="#devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x56DB;&#x7BC7;-sources-&#x6E90;&#x6587;&#x4EF6;&#x9762;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>Devtools &#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x56DB;&#x7BC7;-Sources &#x6E90;&#x6587;&#x4EF6;&#x9762;&#x677F;</h1>
+<h2 id="&#x6982;&#x89C8;"><a name="&#x6982;&#x89C8;" class="anchor-navigation-ex-anchor" href="#&#x6982;&#x89C8;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6982;&#x89C8;" class="plugin-anchor" href="#&#x6982;&#x89C8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6982;&#x89C8;</h2>
+<ul>
+<li>Debug : &#x5728;&#x6E90;&#x4EE3;&#x7801;&#x9762;&#x677F;&#x4E2D;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;<strong>&#x65AD;&#x70B9;</strong>&#x6765;&#x8C03;&#x8BD5; JavaScript &#xFF0C;&#x6BD4; console.log()&#x8C03;&#x8BD5;&#x66F4;&#x5FEB;&#x901F;&#x9AD8;&#x6548;</li>
+<li>Devtools as IDE : &#x901A;&#x8FC7; Workspaces&#xFF08;&#x5DE5;&#x4F5C;&#x533A;&#xFF09;&#x8FDE;&#x63A5;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x6765;&#x4F7F;&#x7528;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x7684;<strong>&#x5B9E;&#x65F6;&#x7F16;&#x8F91;&#x5668;</strong></li>
+</ul>
+<p><img src="../images/devtools/200.png" alt="0"></p>
+<h2 id="&#x4E03;&#x79CD;&#x65AD;&#x70B9;&#x7C7B;&#x578B;"><a name="&#x4E03;&#x79CD;&#x65AD;&#x70B9;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x4E03;&#x79CD;&#x65AD;&#x70B9;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E03;&#x79CD;&#x65AD;&#x70B9;&#x7C7B;&#x578B;" class="plugin-anchor" href="#&#x4E03;&#x79CD;&#x65AD;&#x70B9;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E03;&#x79CD;&#x65AD;&#x70B9;&#x7C7B;&#x578B;</h2>
+<ol>
+<li>&#x884C;&#x65AD;&#x70B9;&#xFF1A;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x5230;&#x5F53;&#x524D;&#x884C;&#x4E4B;&#x524D;&#x6682;&#x505C;&#x6267;&#x884C;<pre><code> &#x5728;&#x6E90;&#x4EE3;&#x7801;&#x6DFB;&#x52A0;debugger&#x5173;&#x952E;&#x5B57;
+ &#x6216;&#x8005;
+ &#x70B9;&#x51FB;Sources&#x9762;&#x677F;&#x4E2D;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x884C;&#x53F7;
+</code></pre></li>
+<li>&#x6761;&#x4EF6;&#x884C;&#x65AD;&#x70B9;&#xFF1A;&#x5F53;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x65F6;&#x624D;&#x4F1A;&#x89E6;&#x53D1;&#x8BE5;&#x65AD;&#x70B9;<pre><code> &#x53F3;&#x51FB;Sources&#x9762;&#x677F;&#x4E2D;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x884C;&#x53F7;
+ &#x9009;&#x62E9;&#x201C;Add conditional breakpoint&#x201D;
+</code></pre> <img src="../images/devtools/201.GIF" alt="0"></li>
+<li>DOM &#x65AD;&#x70B9;<pre><code> &#x5373;Elements&#x9762;&#x677F;&#x63D0;&#x53CA;&#x8FC7;&#x7684;&#x4E09;&#x79CD;DOM&#x65AD;&#x70B9;&#xFF1A;
+ - &#x8282;&#x70B9;&#x5C5E;&#x6027;&#x65AD;&#x70B9;
+ - &#x8282;&#x70B9;&#x5220;&#x9664;&#x65AD;&#x70B9;
+ - &#x5B50;&#x6811;&#x53D8;&#x66F4;&#x65AD;&#x70B9;
+</code></pre> <img src="../images/devtools/202.GIF" alt="0"></li>
+<li>XHR/Fetch &#x65AD;&#x70B9;<pre><code> &#x5728;&#x9875;&#x9762;&#x53D1;&#x51FA;XHR&#x6216;Fetch&#x8BF7;&#x6C42;&#x524D;&#x52A0;&#x65AD;&#x70B9;
+</code></pre> <img src="../images/devtools/203.GIF" alt="0"></li>
+<li>Event Listener &#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x65AD;&#x70B9;<pre><code> &#x53EF;&#x4EE5;&#x5728;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684;&#x4E8B;&#x4EF6;&#x51FD;&#x6570;&#x88AB;&#x51FA;&#x53D1;&#x524D;&#x52A0;&#x65AD;&#x70B9;
+</code></pre> <img src="../images/devtools/204.png" alt="0"></li>
+<li><p>Exception &#x5F02;&#x5E38;&#x65AD;&#x70B9;</p>
+<p> <img src="../images/devtools/205.png" alt="0"></p>
+</li>
+<li><p>Function &#x51FD;&#x6570;&#x65AD;&#x70B9;</p>
+<pre><code> &#x628A;&#x60F3;&#x8C03;&#x8BD5;&#x7684;&#x51FD;&#x6570;&#x540D;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x8C03;&#x7528;debug()&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x8BE5;&#x51FD;&#x6570;&#x524D;&#x6682;&#x505C;&#x6267;&#x884C;&#x4EE3;&#x7801;
+</code></pre><p> <img src="../images/devtools/206.gif" alt="0"></p>
+</li>
+</ol>
+<h2 id="debug"><a name="debug" class="anchor-navigation-ex-anchor" href="#debug"><i class="fa fa-link" aria-hidden="true"></i></a><a name="debug" class="plugin-anchor" href="#debug"><i class="fa fa-link" aria-hidden="true"></i></a>Debug</h2>
+<ul>
+<li>&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6808; Call Stack&#xFF1A;Call Stack &#x662F; time traveling &#x7684;&#xFF0C;&#x5373;&#x70B9;&#x51FB;&#x6808;&#x4E2D;&#x7684;&#x4EFB;&#x4E00;&#x8282;&#x70B9;&#xFF0C;&#x5F53;&#x524D;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x90FD;&#x4F1A;&#x6A21;&#x62DF;&#x81F3;&#x8BE5;&#x8282;&#x70B9;&#x6267;&#x884C;&#x65F6;&#x7684;&#x72B6;&#x6001;</li>
+</ul>
+<p><img src="../images/devtools/209.png" alt="0"></p>
+<ul>
+<li>&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF; Global &#xFF0C;&#x5C40;&#x90E8;&#x4F5C;&#x7528;&#x57DF; Local &#xFF0C;&#x95ED;&#x5305;&#x4F5C;&#x7528;&#x57DF; Closure</li>
+</ul>
+<p><img src="../images/devtools/210.png" alt="0"></p>
+<ul>
+<li>step over next function</li>
+<li>step into next function</li>
+<li>step out current function</li>
+<li>step (&#x4E0E; step over/into &#x7684;&#x533A;&#x522B;&#x5C31;&#x662F;&#xFF0C;step &#x4F1A;&#x4F18;&#x5148;&#x5C1D;&#x8BD5; step into&#xFF0C;&#x5F53;&#x6CA1;&#x6709;&#x53EF;&#x6B65;&#x5165;&#x7684;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x6267;&#x884C; step over)</li>
+</ul>
+<p><img src="../images/devtools/207.png" alt="0"></p>
+<ul>
+<li>long resume&#xFF1A;&#x6062;&#x590D;&#x6267;&#x884C;&#xFF0C;&#x5E76;&#x5C06;&#x65AD;&#x70B9;&#x505C;&#x7528; 500ms</li>
+</ul>
+<p><img src="../images/devtools/211.png" alt="0"></p>
+<ul>
+<li>Continue to here&#xFF1A;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x81F3;&#x6B64;&#x884C;</li>
+</ul>
+<p><img src="../images/devtools/207.gif" alt="0"></p>
+<ul>
+<li>Restart Frame&#xFF1A;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x5806;&#x6808;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x5E27;</li>
+</ul>
+<p><img src="../images/devtools/208.gif" alt="0"></p>
+<ul>
+<li>&#x884C;&#x65AD;&#x70B9;&#x5185;&#x7684;&#x591A;&#x4E2A;&#x7BAD;&#x5934;&#xFF1A;&#x884C;&#x5185;&#x65AD;&#x70B9;&#xFF08;&#x884C;&#x5185;&#x7684;&#xFF0C;&#x53EF; step into &#x7684; &#x6267;&#x884C;&#x70B9;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/05/13/5cd969192e3cf64417.png" alt=""></p>
+<h2 id="devtools-nodejs-debug"><a name="devtools-nodejs-debug" class="anchor-navigation-ex-anchor" href="#devtools-nodejs-debug"><i class="fa fa-link" aria-hidden="true"></i></a><a name="devtools-nodejs-debug" class="plugin-anchor" href="#devtools-nodejs-debug"><i class="fa fa-link" aria-hidden="true"></i></a>Devtools Nodejs debug</h2>
+<ul>
+<li>node &#x6267;&#x884C; js &#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x540D;&#x524D;&#x52A0;--inspect &#x6807;&#x5FD7;&#xFF0C;&#x542F;&#x7528;&#x6D4F;&#x89C8;&#x5668; nodejs &#x8C03;&#x8BD5;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/22/5cbd33c700aed.png" alt="nodeDebug.png"></p>
+<ul>
+<li>&#x70B9;&#x51FB; devtools &#x4E2D;&#xFF0C;&#x5DE6;&#x4E0A;&#x89D2;&#x7684; devices mode &#x53F3;&#x4FA7;&#x7684;&#x7EFF;&#x8272;&#x6309;&#x94AE;&#xFF0C;&#x5373;&#x53EF;&#x542F;&#x7528; node &#x670D;&#x52A1;&#x7AEF;&#x4E2D;&#x7684;&#x811A;&#x672C;&#x8C03;&#x8BD5;</li>
+<li><a href="https://nodejs.org/en/docs/guides/debugging-getting-started/" target="_blank">&#x66F4;&#x591A;&#x76F8;&#x5173;</a></li>
+</ul>
+<h2 id="blackbox"><a name="blackbox" class="anchor-navigation-ex-anchor" href="#blackbox"><i class="fa fa-link" aria-hidden="true"></i></a><a name="blackbox" class="plugin-anchor" href="#blackbox"><i class="fa fa-link" aria-hidden="true"></i></a>BlackBox</h2>
+<ul>
+<li><p>BlackBox &#x7684;&#x7528;&#x9014;&#xFF1A;</p>
+<p>&#x201C;BlackBox Script&#x201D;&#x53EF;&#x4EE5;&#x5728;&#x8C03;&#x8BD5;&#x4E2D;&#x5FFD;&#x7565;&#x67D0;&#x4E9B;&#x811A;&#x672C;(&#x6B64;&#x5904;&#x7684; BlackBox &#x4E3A;&#x52A8;&#x8BCD;)&#xFF0C;&#x5728; Call Stack &#x5806;&#x6808;&#x4E2D;&#x4F1A;&#x5C06;&#x8BE5;&#x811A;&#x672C;&#x9690;&#x85CF;&#xFF0C;&#x5355;&#x6B65;&#x8C03;&#x8BD5;&#x65F6;&#x4E5F;&#x4E0D;&#x4F1A;&#x6B65;&#x5165;&#x811A;&#x672C;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x51FD;&#x6570;</p>
+<pre><code>function animate() {
+prepare();
+lib.doFancyStuff(); // A
+render();
+}
+</code></pre><p>&#x4F8B;&#x5982;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x7684; A &#x884C;&#xFF0C;&#x8C03;&#x7528;&#x7684;&#x662F;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x7684; doFancyStuff &#x51FD;&#x6570;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x786E;&#x8BA4;&#x8BE5;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x6CA1;&#x6709; bug</p>
+<p>&#x5C31;&#x53EF;&#x4EE5; BlackBox &#x6574;&#x4E2A;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x7684; js &#x811A;&#x672C;&#xFF0C;&#x5728;&#x8C03;&#x8BD5;&#x4E2D;&#x8DF3;&#x8FC7;&#x8FD9;&#x4E9B;&#x4EE3;&#x7801;&#x7684;&#x6267;&#x884C;</p>
+</li>
+<li><p>&#x4E09;&#x79CD;&#x6DFB;&#x52A0; BlackBox &#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+</li>
+<li><p>&#x5728;&#x6E90;&#x4EE3;&#x7801;&#x7A97;&#x683C;&#x53F3;&#x952E;&#xFF0C;&#x9009;&#x62E9;&quot;BlackBox Script&quot;
+<img src="../images/devtools/212.gif" alt="0"></p>
+</li>
+<li><p>&#x5728; Call Stack &#x4E2D;&#x53F3;&#x952E;&#x67D0;&#x4E00;&#x5E27;&#xFF0C;&#x9009;&#x62E9;&quot;BlackBox Script&quot;
+<img src="../images/devtools/211.gif" alt="0"></p>
+</li>
+<li><p>&#x5728;&#x8BBE;&#x7F6E;&#x4E2D;&#x7684; Blackboxing &#x9762;&#x677F;&#x6DFB;&#x52A0;<strong>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</strong>&#x5339;&#x914D;<strong>&#x6587;&#x4EF6;&#x540D;</strong></p>
+<p> <img src="../images/devtools/213.gif" alt="0"></p>
+</li>
+</ul>
+<h2 id="workspace&#xFF1A;devtools-as-ide-&#x5C06;&#x66F4;&#x6539;&#x6301;&#x4E45;&#x5316;"><a name="workspace&#xFF1A;devtools-as-ide-&#x5C06;&#x66F4;&#x6539;&#x6301;&#x4E45;&#x5316;" class="anchor-navigation-ex-anchor" href="#workspace&#xFF1A;devtools-as-ide-&#x5C06;&#x66F4;&#x6539;&#x6301;&#x4E45;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="workspace&#xFF1A;devtools-as-ide-&#x5C06;&#x66F4;&#x6539;&#x6301;&#x4E45;&#x5316;" class="plugin-anchor" href="#workspace&#xFF1A;devtools-as-ide-&#x5C06;&#x66F4;&#x6539;&#x6301;&#x4E45;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>Workspace&#xFF1A;Devtools as IDE &#x5C06;&#x66F4;&#x6539;&#x6301;&#x4E45;&#x5316;</h2>
+<ul>
+<li>&#x5728; sources &#x5DE6;&#x4FA7;&#x7684;&#x9762;&#x677F;&#x4E2D;&#x9009;&#x62E9;<code>Filesystem</code>&#xFF0C;&#x70B9;&#x51FB;<code>Add folder to workspace</code>&#xFF0C;&#x5C06;&#x4F60;&#x672C;&#x5730;&#x8FD0;&#x884C;&#x7684;&#x7AD9;&#x70B9;&#x7684;&#x76F8;&#x5173;&#x6E90;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x5230; Devtools &#x7684;&#x5DE5;&#x4F5C;&#x533A;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x8BC6;&#x522B; Page &#x4E0B;&#x548C;&#x5DE5;&#x4F5C;&#x533A;&#x4E0B;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5728; devtools &#x66F4;&#x6539;&#x6587;&#x4EF6;&#x5E76;&#x4FDD;&#x5B58;&#xFF0C;&#x5373;&#x6301;&#x4E45;&#x5316;&#x4FDD;&#x5B58;&#xFF08;&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;&#x81EA;&#x52A8;&#x8BC6;&#x522B;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x6DFB;&#x52A0;&#x6620;&#x5C04;&#xFF09;</li>
+<li>&#x7EFF;&#x6807;&#x6587;&#x4EF6;&#xFF1A;&#x6210;&#x529F;&#x7684;&#x6620;&#x5C04;&#x5230;&#x672C;&#x5730;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5728; Styles &#x548C; Sources &#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x524D;&#xFF0C;&#x90FD;&#x4F1A;&#x6DFB;&#x52A0;&#x7EFF;&#x8272;&#x5706;&#x70B9;&#x4F5C;&#x4E3A;&#x6807;&#x8BC6;
+<img src="https://i.loli.net/2019/04/22/5cbd0771e5e31.png" alt="workspace.png">
+<img src="https://i.loli.net/2019/04/22/5cbd07bf14dc8.png" alt="workspace2.png"></li>
+<li>&#x76EE;&#x524D; Devtools &#x5DF2;&#x7ECF;&#x652F;&#x6301; sass/scss&#x3001;UglifyJS&#x3001;Grunt&#x3001;Coffescript&#x3001;Closure &#x7B49;&#x7B49;&#xFF0C;&#x6682;&#x65F6;&#x8FD8;&#x4E0D;&#x652F;&#x6301; webpack&#xFF0C;&#x548C;&#x5176;&#x4ED6;&#x73B0;&#x4EE3;&#x7684;&#x590D;&#x6742;&#x6846;&#x67B6;&#xFF0C;&#x5982; react</li>
+<li>&#x6240;&#x6709;sources&#x9762;&#x677F;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x53F3;&#x952E;&#x9009;&#x62E9;<code>local modifications</code>&#xFF0C;&#x67E5;&#x770B;&#x6240;&#x6709;&#x66F4;&#x6539;</li>
+<li>&#x5BF9; DOM &#x6811;&#x7684;&#x66F4;&#x6539;&#x4E0D;&#x4F1A;&#x6301;&#x4E45;&#x5316;&#x81F3; html &#x6587;&#x4EF6;&#xFF1A;&#x56E0;&#x4E3A; dom &#x7684;&#x6700;&#x7EC8;&#x8868;&#x73B0;&#xFF0C;&#x53D7;&#x5230; html&#x3001;css&#x3001;javascript &#x7684;&#x5171;&#x540C;&#x5F71;&#x54CD;&#xFF0C;DOM &#x6811; !== HTML&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5728; sources &#x4E2D;&#x76F4;&#x63A5;&#x66F4;&#x6539; html &#x6587;&#x4EF6;&#x5E76;&#x4FDD;&#x5B58;</li>
+</ul>
+<h2 id="source-map"><a name="source-map" class="anchor-navigation-ex-anchor" href="#source-map"><i class="fa fa-link" aria-hidden="true"></i></a><a name="source-map" class="plugin-anchor" href="#source-map"><i class="fa fa-link" aria-hidden="true"></i></a>Source Map</h2>
+<ul>
+<li>&#x7EC4;&#x5408;/&#x538B;&#x7F29; css,js &#x6587;&#x4EF6;&#x662F;&#x5E38;&#x89C1;&#x7684;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x65B9;&#x6848;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x5BF9;&#x5F00;&#x53D1;&#x8C03;&#x8BD5;&#x9020;&#x6210;&#x56F0;&#x6270;</li>
+<li>Source Map &#x7528;&#x4E8E;&#x5C06;&#x751F;&#x4EA7;&#x4EE3;&#x7801;&#x6620;&#x5C04;&#x81F3;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;Chrome &#x548C; firefox &#x90FD;&#x5185;&#x7F6E;&#x4E86;&#x5BF9; Source Map &#x7684;&#x652F;&#x6301;</li>
+<li>&#x5728; Chorme devtools &#x4E2D;&#xFF0C;settings -&gt; preferen -&gt; sources &#x4E2D;&#xFF0C;&#x9009;&#x4E2D;<code>Enable Javascript source maps</code>&#x548C;<code>Enable CSS source maps</code></li>
+<li>source map &#x6620;&#x5C04;&#x4FE1;&#x606F;&#x5B58;&#x5728; json &#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x4FDD;&#x5B58;&#x5728; .map &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x7531;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x6DFB;&#x52A0;&#x6CE8;&#x91CA;<code>//# sourceMappingURL=/path/to/script.js.map</code>&#x81F3;&#x751F;&#x4EA7;&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7531;&#x670D;&#x52A1;&#x7AEF;&#x5728;&#x54CD;&#x5E94;&#x5934;&#x4E2D;&#x6DFB;&#x52A0;<code>X-SourceMap: /path/to/script.js.map</code>&#xFF0C;&#x5C06; map &#x6587;&#x4EF6;&#x4E0E;&#x751F;&#x4EA7;&#x6587;&#x4EF6;&#x5BF9;&#x5E94;&#x3002;<a href="https://blog.teamtreehouse.com/introduction-source-maps" target="_blank">&#x66F4;&#x591A;&#x5173;&#x4E8E; source map &#x7684;&#x4ECB;&#x7ECD;</a></li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/22/5cbd10f324e07.png" alt="sourceMap.png"></p>
+<h2 id="local-overrides"><a name="local-overrides" class="anchor-navigation-ex-anchor" href="#local-overrides"><i class="fa fa-link" aria-hidden="true"></i></a><a name="local-overrides" class="plugin-anchor" href="#local-overrides"><i class="fa fa-link" aria-hidden="true"></i></a>Local Overrides</h2>
+<ul>
+<li>&#x901A;&#x8FC7; Local Overrides&#xFF0C;&#x53EF;&#x4EE5;&#x5728; DevTools &#x4E2D;&#x8FDB;&#x884C;&#x66F4;&#x6539;&#xFF0C;&#x5E76;&#x5728;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x540E;&#x4FDD;&#x7559;&#x8FD9;&#x4E9B;&#x66F4;&#x6539;</li>
+<li>&#x5728; Sources &#x9762;&#x677F;&#x5DE6;&#x4FA7;&#x9009;&#x62E9; Overrides&#xFF0C;&#x6307;&#x5B9A; DevTools &#x5E94;&#x4FDD;&#x5B58;&#x66F4;&#x6539;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x5F53;&#x5728; DevTools &#x4E2D;&#x8FDB;&#x884C;&#x66F4;&#x6539;&#x65F6;&#xFF0C;DevTools &#x4F1A;&#x5C06;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x526F;&#x672C;&#x4FDD;&#x5B58;&#x5230;&#x6240;&#x9009;&#x7684;&#x672C;&#x5730;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x9875;&#x9762;&#x65F6;&#xFF0C;DevTools &#x63D0;&#x4F9B;&#x672C;&#x5730;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8BF7;&#x6C42;&#x7684;&#x7F51;&#x7EDC;&#x8D44;&#x6E90;&#x3002;</li>
+<li>&#x4E0E; Workspace &#x76F8;&#x4F3C;&#x7684;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x4FDD;&#x5B58;&#x5BF9; DOM &#x6811;&#x7684;&#x66F4;&#x6539;&#xFF0C;&#x9700;&#x8981;&#x76F4;&#x63A5;&#x66F4;&#x6539; html &#x6E90;&#x6587;&#x4EF6;&#x3002;</li>
+</ul>
+<h2 id="snippets-&#x4EE3;&#x7801;&#x7247;&#x6BB5;"><a name="snippets-&#x4EE3;&#x7801;&#x7247;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#snippets-&#x4EE3;&#x7801;&#x7247;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="snippets-&#x4EE3;&#x7801;&#x7247;&#x6BB5;" class="plugin-anchor" href="#snippets-&#x4EE3;&#x7801;&#x7247;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>Snippets &#x4EE3;&#x7801;&#x7247;&#x6BB5;</h2>
+<ul>
+<li>&#x5728; Sources &#x9762;&#x677F;&#x5DE6;&#x4FA7;&#x9009;&#x62E9; Snippets&#xFF0C;&#x6216;<code>crlt shift p</code>&#x8F93;&#x5165; snippet &#x6253;&#x5F00; Snippets &#x9762;&#x677F;&#xFF0C;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x5E76;&#x4FDD;&#x5B58;&#x5E38;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#xFF0C;&#x548C;&#x7528; gist &#x7C7B;&#x4F3C;</li>
+<li>snippets &#x4E2D;&#xFF0C;&#x9009;&#x4E2D;&#x4EE3;&#x7801;&#x5E76;<code>ctrl enter</code>&#xFF0C;&#x6216;&#x70B9;&#x51FB;&#x53F3;&#x4E0B;&#x89D2;&#x7684;&#x6267;&#x884C;&#x6309;&#x94AE;&#xFF0C;&#x5373;&#x53EF;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x7247;&#x6BB5;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/22/5cbd147145955.png" alt="snippet.png"></p>
+<h2 id="content-scripts"><a name="content-scripts" class="anchor-navigation-ex-anchor" href="#content-scripts"><i class="fa fa-link" aria-hidden="true"></i></a><a name="content-scripts" class="plugin-anchor" href="#content-scripts"><i class="fa fa-link" aria-hidden="true"></i></a>Content scripts</h2>
+<ul>
+<li>&#x8FD9;&#x90E8;&#x5206;&#x811A;&#x672C;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x63D2;&#x4EF6;&#x7684;&#x811A;&#x672C;&#xFF0C;&#x5728;&#x7279;&#x5B9A;&#x7F51;&#x9875;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x8FD0;&#x884C;&#x3002;&#xFF08;&#x4E0E;&#x63D2;&#x4EF6;&#x8FD0;&#x884C;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x811A;&#x672C;&#xFF0C;&#x9875;&#x9762;&#x4E0A;&#x5F15;&#x7528;&#x7684;&#x811A;&#x672C;&#xFF0C;&#x9875;&#x9762;&#x4E0A; script &#x4E2D;&#x7684;&#x5185;&#x5D4C;&#x811A;&#x672C;&#x90FD;&#x4E0D;&#x540C;</li>
+<li>&#x63D2;&#x4EF6;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x811A;&#x672C;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x6240;&#x6709; WebExtension JavaScript API&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x7F51;&#x9875;&#x5185;&#x5BB9;&#x3002;</li>
+<li>Content scripts &#x53EA;&#x80FD;&#x8BBF;&#x95EE; WebExtension API &#x7684;&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x7CFB;&#x7EDF;&#x4E0E;&#x540E;&#x53F0;&#x811A;&#x672C;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#xFF0C;&#x4ECE;&#x800C;&#x95F4;&#x63A5;&#x8BBF;&#x95EE; WebExtension API&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6709;&#x6D4F;&#x89C8;&#x5668;&#x63D2;&#x4EF6;&#x76F8;&#x5173;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x6DF1;&#x5165;<a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions" target="_blank">&#x7814;&#x7A76;</a>&#xFF0C;&#x4E0D;&#x8D58;&#x8FF0;&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="devtools_03_console.html" class="navigation navigation-prev " aria-label="Previous page: 第三篇-Console面板">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="devtools_05_network.html" class="navigation navigation-next " aria-label="Next page: 第五篇-Network面板">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第四篇-Sources面板","level":"3.4","depth":1,"next":{"title":"第五篇-Network面板","level":"3.5","depth":1,"path":"devtools/devtools_05_network.md","ref":"devtools/devtools_05_network.md","articles":[]},"previous":{"title":"第三篇-Console面板","level":"3.3","depth":1,"path":"devtools/devtools_03_console.md","ref":"devtools/devtools_03_console.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./src/css/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/scarsu"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"./src/images/donate.png","title":"","button":"赞赏","alipayText":" "},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"scarsu","repo":"myGitbook","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"ScarSu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ScarSu's Gitbook","language":"zh-hans","gitbook":"3.2.3","description":"Outputing is Learning"},"file":{"path":"devtools/devtools_04_sources.md","mtime":"2019-05-17T01:26:07.813Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-17T11:05:40.341Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,525 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第六篇-Performance面板与性能 · ScarSu's Gitbook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ScarSu">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../src/css/website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="devtools_07_memory.html" />
+    
+    
+    <link rel="prev" href="devtools_05_network.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"scarsu","repo":"myGitbook","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <a target="_blank" href="https://www.scarsu.com">
+            
+                    
+                    我的博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                     关于本书
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Devtools新手入门</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="devtools_intro_share.html">
+            
+                <a href="devtools_intro_share.html">
+            
+                    
+                    Devtools入门概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Devtools老司机养成</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="devtools_01_intro.html">
+            
+                <a href="devtools_01_intro.html">
+            
+                    
+                    第一篇-介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="devtools_02_elements.html">
+            
+                <a href="devtools_02_elements.html">
+            
+                    
+                    第二篇-Elements面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="devtools_03_console.html">
+            
+                <a href="devtools_03_console.html">
+            
+                    
+                    第三篇-Console面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="devtools_04_sources.html">
+            
+                <a href="devtools_04_sources.html">
+            
+                    
+                    第四篇-Sources面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="devtools_05_network.html">
+            
+                <a href="devtools_05_network.html">
+            
+                    
+                    第五篇-Network面板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.6" data-path="devtools_06_performance.html">
+            
+                <a href="devtools_06_performance.html">
+            
+                    
+                    第六篇-Performance面板与性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="devtools_07_memory.html">
+            
+                <a href="devtools_07_memory.html">
+            
+                    
+                    第七篇-Memory面板与内存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="vm_in_devtools.html">
+            
+                <a href="vm_in_devtools.html">
+            
+                    
+                    番外篇-Devtools中的'VM'
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第六篇-Performance面板与性能</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x516D;&#x7BC7;--performance-&#x6027;&#x80FD;&#x9762;&#x677F;"><b></b>Devtools &#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x516D;&#x7BC7;- Performance &#x6027;&#x80FD;&#x9762;&#x677F;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6982;&#x89C8;"><b></b>&#x6982;&#x89C8;</a></li><li><span class="title-icon "></span><a href="#rail-&#x6A21;&#x578B;"><b></b>RAIL &#x6A21;&#x578B;</a></li><li><span class="title-icon "></span><a href="#&#x63A7;&#x5236;&#x533A;"><b></b>&#x63A7;&#x5236;&#x533A;</a></li><li><span class="title-icon "></span><a href="#fps-&#x56FE;&#x8868;---frames-per-seconds"><b></b>FPS &#x56FE;&#x8868; - Frames Per Seconds</a></li><li><span class="title-icon "></span><a href="#cpu-&#x56FE;&#x8868;"><b></b>CPU &#x56FE;&#x8868;</a></li><li><span class="title-icon "></span><a href="#screenshots"><b></b>SCREENSHOTS</a></li><li><span class="title-icon "></span><a href="#heap"><b></b>HEAP</a></li><li><span class="title-icon "></span><a href="#frames"><b></b>Frames</a></li><li><span class="title-icon "></span><a href="#fps-&#x4EEA;&#x8868;&#x5DE5;&#x5177;"><b></b>FPS &#x4EEA;&#x8868;&#x5DE5;&#x5177;</a></li><li><span class="title-icon "></span><a href="#mian"><b></b>Mian</a></li><li><span class="title-icon "></span><a href="#&#x6027;&#x80FD;&#x76F8;&#x5173;&#x6269;&#x5C55;"><b></b>&#x6027;&#x80FD;&#x76F8;&#x5173;&#x6269;&#x5C55;</a></li></ul></ul></div><a href="#devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x516D;&#x7BC7;--performance-&#x6027;&#x80FD;&#x9762;&#x677F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x516D;&#x7BC7;--performance-&#x6027;&#x80FD;&#x9762;&#x677F;"><a name="devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x516D;&#x7BC7;--performance-&#x6027;&#x80FD;&#x9762;&#x677F;" class="anchor-navigation-ex-anchor" href="#devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x516D;&#x7BC7;--performance-&#x6027;&#x80FD;&#x9762;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x516D;&#x7BC7;--performance-&#x6027;&#x80FD;&#x9762;&#x677F;" class="plugin-anchor" href="#devtools-&#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x516D;&#x7BC7;--performance-&#x6027;&#x80FD;&#x9762;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>Devtools &#x8001;&#x53F8;&#x673A;&#x517B;&#x6210;-&#x7B2C;&#x516D;&#x7BC7;- Performance &#x6027;&#x80FD;&#x9762;&#x677F;</h1>
+<h2 id="&#x6982;&#x89C8;"><a name="&#x6982;&#x89C8;" class="anchor-navigation-ex-anchor" href="#&#x6982;&#x89C8;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6982;&#x89C8;" class="plugin-anchor" href="#&#x6982;&#x89C8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6982;&#x89C8;</h2>
+<ul>
+<li>performance &#x9762;&#x677F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5206;&#x6790;<code>&#x8FD0;&#x884C;&#x65F6;&#x6027;&#x80FD;</code>(&#x8FD0;&#x884C;&#x65F6;&#x5F3A;&#x8C03;&#x7684;&#x662F;&#x4E0E;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x6027;&#x80FD;&#x76F8;&#x533A;&#x5206;)</li>
+<li>&#x4EE5;&#x9690;&#x8EAB;&#x6A21;&#x5F0F;&#x6253;&#x5F00;&#x7F51;&#x9875; &#xFF08;&#x9690;&#x8EAB;&#x6A21;&#x5F0F;&#x53EF;&#x786E;&#x4FDD; Chrome &#x4EE5;&#x5E72;&#x51C0;&#x7684;&#x72B6;&#x6001;&#x8FD0;&#x884C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6392;&#x9664;&#x6269;&#x5C55;&#x5BF9;&#x6027;&#x80FD;&#x6D4B;&#x91CF;&#x7684;&#x5F71;&#x54CD;</li>
+<li><a href="https://googlechrome.github.io/devtools-samples/jank/" target="_blank">Janky Animation demo &#xFF1A;&#x6027;&#x80FD;&#x6D4B;&#x8BD5; demo</a></li>
+<li>&#x89C6;&#x56FE; overview&#xFF1A;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/04/23/5cbf1d586fe21.png" alt="performance.png"></p>
+<h2 id="rail-&#x6A21;&#x578B;"><a name="rail-&#x6A21;&#x578B;" class="anchor-navigation-ex-anchor" href="#rail-&#x6A21;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="rail-&#x6A21;&#x578B;" class="plugin-anchor" href="#rail-&#x6A21;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>RAIL &#x6A21;&#x578B;</h2>
+<ul>
+<li><a href="https://developers.google.com/web/fundamentals/performance/rail" target="_blank">RAIL &#x6A21;&#x578B;</a>&#x662F;&#x4E00;&#x79CD;&#x6027;&#x80FD;&#x6A21;&#x578B;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x56DB;&#x4E2A;&#x7EF4;&#x5EA6;&#x7684;&#x6027;&#x80FD;&#x5206;&#x6790;&#x6307;&#x6807;</li>
+<li><code>Response</code>&#xFF1A;&#x5728;<code>100 &#x6BEB;&#x79D2;</code>&#x4EE5;&#x5185;&#x54CD;&#x5E94;&#xFF08;&#x4F8B;&#x5982;&#x4ECE;&#x70B9;&#x6309;&#x5230;&#x7ED8;&#x5236;&#xFF09;</li>
+<li><code>Animation</code>&#xFF1A; &#x6BCF;&#x79D2;&#x751F;&#x6210; 60 &#x5E27;&#xFF0C;&#x6BCF;&#x4E2A;&#x5E27;&#x7684;&#x5DE5;&#x4F5C;&#xFF08;&#x4ECE; JS &#x5230;&#x7ED8;&#x5236;&#xFF09;&#x5B8C;&#x6210;&#x65F6;&#x95F4;&#x5C0F;&#x4E8E; 16 &#x6BEB;&#x79D2;,&#x8FBE;&#x5230;&#x4EBA;&#x773C;&#x987A;&#x6ED1;&#xFF08;&#x4F8B;&#x5982;&#x6EDA;&#x52A8; &#x62D6;&#x52A8;&#x90FD;&#x662F;&#x52A8;&#x753B;&#x7C7B;&#x578B;&#xFF09;&#xFF08;&#x56E0;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#x9700;&#x8981;&#x82B1;&#x8D39;&#x65F6;&#x95F4;&#x5C06;&#x65B0;&#x5E27;&#x7ED8;&#x5236;&#x5230;&#x5C4F;&#x5E55;&#x4E0A;&#xFF0C;&#x53EA;&#x6709; <code>10 &#x6BEB;&#x79D2;</code>&#x6765;&#x6267;&#x884C;&#x4EE3;&#x7801;&#xFF09;</li>
+<li><code>Idle</code>&#xFF1A;&#x5229;&#x7528;&#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#x5B8C;&#x6210;&#x63A8;&#x8FDF;&#x7684;&#x5DE5;&#x4F5C;&#xFF08;&#x8981;&#x5B9E;&#x73B0;&#x7B2C;&#x4E00;&#x6761; response &#x5728; 100ms &#x5185;&#x54CD;&#x5E94;&#xFF0C;Main &#x4E3B;&#x7EBF;&#x7A0B; JS &#x5DE5;&#x4F5C;&#x5E94;&#x8BE5;&#x5C0F;&#x4E8E; <code>50ms</code>&#xFF0C;&#x5269;&#x4F59;&#x7684;&#x65F6;&#x95F4;&#x5C06;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x63A7;&#x5236;&#x4ECE; js &#x8FD4;&#x56DE;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x6267;&#x884C;&#x5176;&#x50CF;&#x7D20;&#x7BA1;&#x9053;&#x3001;&#x5BF9;&#x7528;&#x6237;&#x8F93;&#x5165;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x7B49;&#xFF0C;&#x56E0;&#x6B64;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x662F;&#x5C06; js &#x7684;&#x5DE5;&#x4F5C;&#x5206;&#x6210;&#x4E0D;&#x5927;&#x4E8E; 50 &#x6BEB;&#x79D2;&#x7684;&#x5757;,&#x5982;&#x679C;&#x7528;&#x6237;&#x5F00;&#x59CB;&#x4EA4;&#x4E92;&#xFF0C;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x9AD8;&#x7684;&#x4E8B;&#x9879;&#x662F;&#x54CD;&#x5E94;&#x7528;&#x6237;&#x3002;</li>
+<li><p><code>Load</code>&#xFF1A;&#x5728; <code>1000 &#x6BEB;&#x79D2;</code>&#x4EE5;&#x5185;&#x5448;&#x73B0;&#x5185;&#x5BB9;&#xFF08;&#x65E0;&#x9700;&#x5B8C;&#x6574;&#x52A0;&#x8F7D;&#xFF0C;&#x542F;&#x7528;&#x6E10;&#x8FDB;&#x5F0F;&#x6E32;&#x67D3;&#xFF0C;&#x5C06;&#x975E;&#x5FC5;&#x9700;&#x7684;&#x52A0;&#x8F7D;&#x63A8;&#x8FDF;&#x5230;&#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#x6BB5;</p>
+</li>
+<li><p>&#x901A;&#x8FC7; performance &#x9762;&#x677F;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x8FD9;&#x56DB;&#x4E2A;&#x7EF4;&#x5EA6;&#x7684;&#x5206;&#x6790;&#x6570;&#x636E;</p>
+</li>
+</ul>
+<h2 id="&#x63A7;&#x5236;&#x533A;"><a name="&#x63A7;&#x5236;&#x533A;" class="anchor-navigation-ex-anchor" href="#&#x63A7;&#x5236;&#x533A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x63A7;&#x5236;&#x533A;" class="plugin-anchor" href="#&#x63A7;&#x5236;&#x533A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63A7;&#x5236;&#x533A;</h2>
+<p><img src="https://i.loli.net/2019/05/01/5cc9642fa35b5.png" alt=""></p>
+<ul>
+<li>&#x70B9;&#x51FB;<code>&#x5F55;&#x5236;&#x6309;&#x94AE;</code>&#x6216;&#x8005;<code>&#x5F00;&#x59CB;&#x5F55;&#x5236;&#x5E76;&#x5237;&#x65B0;&#x9875;&#x9762;&#x6309;&#x94AE;</code>,&#x53EF;&#x4EE5;&#x5728;&#x63A7;&#x5236;&#x533A;&#x4E0B;&#x65B9;&#x5F97;&#x5230;&#x5168;&#x90E8;&#x6027;&#x80FD;&#x5206;&#x6790;&#x7ED3;&#x679C;</li>
+<li>&#x5176;&#x4E2D;&#x9664;&#x4E86;&#x6700;&#x4E0B;&#x65B9;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x7A97;&#x683C;&#x4EE5;&#x5916;&#xFF0C;&#x5206;&#x6790;&#x7ED3;&#x679C;&#x90FD;&#x662F;&#x4EE5;&#x65F6;&#x95F4;&#x4E3A;&#x8F74;</li>
+<li>&#x53EF;&#x4EE5;&#x5728; overview &#x7A97;&#x683C;&#x62D6;&#x52A8;&#x9F20;&#x6807;&#xFF0C;&#x9009;&#x62E9;&#x67D0;&#x6BB5;&#x65F6;&#x95F4;&#x7684;&#x5206;&#x6790;&#x7ED3;&#x679C;</li>
+<li>&#x6EDA;&#x52A8;&#x9F20;&#x6807;&#x6EDA;&#x8F6E;&#xFF0C;&#x7F29;&#x653E;/&#x79FB;&#x52A8;&#x9009;&#x4E2D;&#x4E8B;&#x4EF6;</li>
+<li>&#x5728;&#x706B;&#x7130;&#x56FE;&#x7A97;&#x683C;&#xFF0C;&#x6309;&#x4F4F;<code>shift</code>&#xFF0C;&#x6EDA;&#x52A8;&#x9F20;&#x6807;&#x6EDA;&#x8F6E;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0A;&#x4E0B;</li>
+<li>&#x5728;&#x706B;&#x7130;&#x56FE;&#x7A97;&#x683C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5DE6;&#x53F3;&#x62D6;&#x52A8;&#x56FE;&#x8868;</li>
+<li>&#x6216;&#x8005;&#x7528;<code>W A S D</code>&#x6309;&#x952E;&#x63A7;&#x5236;&#x7F29;&#x653E;&#x79FB;&#x52A8;</li>
+<li><code>Disable JavaScript samples</code>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#xFF0C;&#x5728;<code>Main</code>&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x706B;&#x7130;&#x56FE;&#x4E2D;&#xFF0C;&#x4F1A;&#x8BE6;&#x7EC6;&#x8BB0;&#x5F55; js &#x51FD;&#x6570;&#x4E4B;&#x95F4;&#x7684;&#x8C03;&#x7528;&#x6808;&#xFF0C;&#x53EF;&#x4EE5;&#x5F00;&#x542F;&#x6B64;&#x9009;&#x9879;&#x7981;&#x7528;&#x8C03;&#x7528;&#x6808;&#x8BB0;&#x5F55;</li>
+<li><code>Enable advanced paint instrumentation</code>&#x542F;&#x7528;&#x9AD8;&#x7EA7;&#x7ED8;&#x56FE;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5206;&#x6790;&#x7ED3;&#x679C;&#x7684;<code>Frames</code>&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x5E27;&#x7684;&#x8BE6;&#x7EC6;&#x7ED3;&#x679C;&#x4E2D;&#x770B;&#x5230;<code>Layer</code>&#x9009;&#x9879;&#x5361;&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x9009;&#x4E2D;&#x5E27;&#x7684;&#x8BE6;&#x7EC6;&#x56FE;&#x5C42;&#x4FE1;&#x606F;&#xFF1B;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;<code>Main</code>&#x4E3B;&#x7EBF;&#x7A0B;&#x706B;&#x7130;&#x56FE;&#x4E2D;&#x9009;&#x4E2D;&#x7EFF;&#x8272;&#x7684;<code>Paint</code>&#x4E8B;&#x4EF6;&#xFF0C;&#x5728;&#x6700;&#x5E95;&#x90E8;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x7684;<code>Paint Profile</code>&#x9009;&#x9879;&#x5361;&#x4E2D;&#xFF0C;&#x770B;&#x5230;&#x8BE6;&#x7EC6;&#x7684;&#x9875;&#x9762;&#x7ED8;&#x5236;&#x8FC7;&#x7A0B;&#x5206;&#x6790;</li>
+<li><code>Collect garbage</code>&#x63A7;&#x5236;&#x5668;&#x6700;&#x53F3;&#x7684;&#x5783;&#x573E;&#x6876;&#x56FE;&#x6807;&#xFF0C;&#x662F;&#x5F3A;&#x5236;&#x6267;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;&#xFF0C;&#x5BF9;&#x4E8E;&#x76D1;&#x63A7;&#x5185;&#x5B58;&#x6BD4;&#x8F83;&#x6709;&#x7528;</li>
+</ul>
+<h2 id="fps-&#x56FE;&#x8868;---frames-per-seconds"><a name="fps-&#x56FE;&#x8868;---frames-per-seconds" class="anchor-navigation-ex-anchor" href="#fps-&#x56FE;&#x8868;---frames-per-seconds"><i class="fa fa-link" aria-hidden="true"></i></a><a name="fps-&#x56FE;&#x8868;---frames-per-seconds" class="plugin-anchor" href="#fps-&#x56FE;&#x8868;---frames-per-seconds"><i class="fa fa-link" aria-hidden="true"></i></a>FPS &#x56FE;&#x8868; - Frames Per Seconds</h2>
+<p><img src="https://i.loli.net/2019/05/05/5ccee0f3335be.png" alt=""></p>
+<ul>
+<li>FPS &#x56FE;&#x8868;&#x4E2D;&#xFF0C;&#x7EFF;&#x8272;&#x4EE3;&#x8868;&#x5E27;&#x7387;&#x9AD8;&#x4F4E;&#xFF0C;&#x53C2;&#x8003;<code>RAIL</code>&#x6A21;&#x578B;&#xFF0C;&#x5E27;&#x7387;&gt;=60 &#x65F6;&#xFF0C;&#x7528;&#x6237;&#x80FD;&#x4F53;&#x9A8C;&#x7684;&#x987A;&#x6ED1;&#x7684;&#x7F51;&#x9875;</li>
+<li>&#x7EA2;&#x8272;&#x51FA;&#x73B0; &#x4EE3;&#x8868;&#x6709;&#x6389;&#x5E27;&#x60C5;&#x51B5;</li>
+</ul>
+<h2 id="cpu-&#x56FE;&#x8868;"><a name="cpu-&#x56FE;&#x8868;" class="anchor-navigation-ex-anchor" href="#cpu-&#x56FE;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cpu-&#x56FE;&#x8868;" class="plugin-anchor" href="#cpu-&#x56FE;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>CPU &#x56FE;&#x8868;</h2>
+<p><img src="https://i.loli.net/2019/05/05/5ccee13cd4479.png" alt=""></p>
+<ul>
+<li>CPU &#x56FE;&#x8868;&#x4E2D;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x989C;&#x8272;&#x4EE3;&#x8868;&#x4E0D;&#x540C;&#x4E8B;&#x4EF6;&#x5BF9; CPU &#x7684;&#x5360;&#x7528;&#xFF0C;&#x989C;&#x8272;&#x4FE1;&#x606F;&#x5982;&#x56FE;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/05/05/5ccee05903554.png" alt=""></p>
+<ul>
+<li>&#x5F53; CPU &#x957F;&#x65F6;&#x95F4;&#x88AB;&#x5360;&#x6EE1;&#xFF0C;&#x5C31;&#x662F;&#x5F53;&#x524D;&#x7F51;&#x9875;&#x6027;&#x80FD;&#x9700;&#x8981;&#x4F18;&#x5316;&#x7684;&#x4FE1;&#x53F7;</li>
+</ul>
+<h2 id="screenshots"><a name="screenshots" class="anchor-navigation-ex-anchor" href="#screenshots"><i class="fa fa-link" aria-hidden="true"></i></a><a name="screenshots" class="plugin-anchor" href="#screenshots"><i class="fa fa-link" aria-hidden="true"></i></a>SCREENSHOTS</h2>
+<ul>
+<li>&#x9F20;&#x6807;&#x5728;<code>FPS,CPU,NET</code>&#x56FE;&#x8868;&#x60AC;&#x6D6E;&#x65F6;&#xFF0C;&#x4F1A;&#x5C55;&#x793A;&#x51FA;&#x9F20;&#x6807;&#x5BF9;&#x5E94;&#x65F6;&#x95F4;&#x70B9;&#x7684;&#x7F51;&#x9875;&#x622A;&#x5C4F;&#xFF0C;&#x5DE6;&#x53F3;&#x79FB;&#x52A8;&#x9F20;&#x6807;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x7F51;&#x9875;&#x53D8;&#x5316;&#x7684;&#x91CD;&#x64AD;&#x6548;&#x679C;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/05/05/5ccee37b9a4b3.gif" alt=""></p>
+<h2 id="heap"><a name="heap" class="anchor-navigation-ex-anchor" href="#heap"><i class="fa fa-link" aria-hidden="true"></i></a><a name="heap" class="plugin-anchor" href="#heap"><i class="fa fa-link" aria-hidden="true"></i></a>HEAP</h2>
+<p><img src="https://i.loli.net/2019/05/05/5ccee6f4b968d.png" alt=""></p>
+<ul>
+<li>&#x5728; HEAP &#x56FE;&#x8868;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x5230; JS &#x5185;&#x5B58;&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF0C;&#x4E0E;&#x4E0B;&#x65B9;&#x7684; memory &#x7A97;&#x683C;&#x4E2D;&#x7684;<code>JS Heap</code>&#x76F8;&#x5BF9;&#x5E94;</li>
+<li>&#x5728; Memory &#x7A97;&#x683C;&#x8FD8;&#x53EF;&#x4EE5;&#x770B;&#x5230; Document &#x6587;&#x6863;&#x3001;Nodes DOM &#x8282;&#x70B9;&#x3001;&#x76D1;&#x542C;&#x5668;&#x3001;GPU &#x5185;&#x5B58;&#x7684;&#x4E60;&#x4EFD;&#x5185;&#x5B58;&#x7EDF;&#x8BA1;</li>
+</ul>
+<h2 id="frames"><a name="frames" class="anchor-navigation-ex-anchor" href="#frames"><i class="fa fa-link" aria-hidden="true"></i></a><a name="frames" class="plugin-anchor" href="#frames"><i class="fa fa-link" aria-hidden="true"></i></a>Frames</h2>
+<ul>
+<li>&#x70B9;&#x51FB;&#x4E09;&#x89D2;&#x7BAD;&#x5934;&#x5C55;&#x5F00;<code>Frames</code>&#x533A;&#x57DF;&#xFF0C;&#x9F20;&#x6807;&#x60AC;&#x6D6E;/&#x70B9;&#x51FB;&#x7EFF;&#x8272;&#x65B9;&#x5757;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8BE5;&#x7279;&#x5B9A;&#x5E27;&#x7684;&#x5E27;&#x7387;&#x548C;&#x6E32;&#x67D3;&#x8017;&#x65F6;&#xFF0C;&#x5F53; FPS &#x4F4E;&#x4E8E; 60&#xFF0C;&#x8868;&#x660E;&#x5F53;&#x524D;&#x5E27;&#x7684;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x8F83;&#x4F4E;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/05/05/5ccee92a52b29.png" alt=""></p>
+<h2 id="fps-&#x4EEA;&#x8868;&#x5DE5;&#x5177;"><a name="fps-&#x4EEA;&#x8868;&#x5DE5;&#x5177;" class="anchor-navigation-ex-anchor" href="#fps-&#x4EEA;&#x8868;&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="fps-&#x4EEA;&#x8868;&#x5DE5;&#x5177;" class="plugin-anchor" href="#fps-&#x4EEA;&#x8868;&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a>FPS &#x4EEA;&#x8868;&#x5DE5;&#x5177;</h2>
+<ul>
+<li>&#x901A;&#x8FC7;<code>more -&gt; more tools -&gt; Rendering</code> &#x6216;&#x8005; <code>ctrl+shift+p -&gt; rendering</code> &#x6253;&#x5F00;<code>Rendering</code>&#x9762;&#x677F;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/05/05/5ccee9d226d2e.png" alt=""></p>
+<ul>
+<li>&#x542F;&#x7528;<code>FPS meter</code>&#xFF0C;&#x5373;&#x53EF;&#x770B;&#x5230;&#x7684;&#x9875;&#x9762;&#x5B9E;&#x65F6;&#x5E27;&#x7387;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/05/05/5cceeb3144e12.gif" alt=""></p>
+<h2 id="mian"><a name="mian" class="anchor-navigation-ex-anchor" href="#mian"><i class="fa fa-link" aria-hidden="true"></i></a><a name="mian" class="plugin-anchor" href="#mian"><i class="fa fa-link" aria-hidden="true"></i></a>Mian</h2>
+<ul>
+<li>&#x70B9;&#x51FB;&#x4E09;&#x89D2;&#x7BAD;&#x5934;&#x5C55;&#x5F00;<code>Main</code>&#x533A;&#x57DF;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x4E8B;&#x4EF6;&#x7684;<code>&#x706B;&#x7130;&#x56FE;</code></li>
+<li>x &#x8F74;&#x662F;&#x65F6;&#x95F4;&#xFF0C;&#x6BCF;&#x4E00;&#x5757;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;y &#x8F74;&#x4EE3;&#x8868;&#x5806;&#x6808;&#xFF0C;&#x4E8B;&#x4EF6;&#x7684;&#x4E0A;&#x4E0B;&#x5806;&#x53E0;&#xFF0C;&#x4EE3;&#x8868;&#x4E0A;&#x5C42;&#x4E8B;&#x4EF6;&#x5F15;&#x53D1;/&#x8C03;&#x7528;&#x4E86;&#x4E0B;&#x5C42;&#x4E8B;&#x4EF6;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/05/05/5cceec8b11f7f.png" alt=""></p>
+<ul>
+<li>&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x5806;&#x6808;&#xFF0C;&#x53EF;&#x4EE5;&#x627E;&#x51FA;&#x5BFC;&#x81F4;&#x4F4E;&#x6027;&#x80FD;&#x7684;&#x4E8B;&#x4EF6;&#x53CA;&#x5176;&#x6E90;&#x7801;&#x4F4D;&#x7F6E;</li>
+<li>&#x5F53;&#x4E8B;&#x4EF6;&#x5757;&#x51FA;&#x73B0;&#x7EA2;&#x8272;&#x4E09;&#x89D2;&#xFF0C;&#x53EF;&#x4EE5;&#x70B9;&#x51FB;&#x4E09;&#x89D2;&#x67E5;&#x770B;&#x8BE5;&#x4E8B;&#x4EF6;&#x7684;&#x6027;&#x80FD;&#x76F8;&#x5173;&#x8B66;&#x544A;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x5B9A;&#x4F4D;&#x5230;&#x5F15;&#x8D77;&#x8B66;&#x544A;&#x7684;&#x4EE3;&#x7801;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/05/05/5cceef6801439.png" alt=""></p>
+<p><img src="https://i.loli.net/2019/05/05/5ccef1a7c2c2a.gif" alt=""></p>
+<ul>
+<li>&#x70B9;&#x51FB;<code>Animation Frame Fired</code>&#x4E8B;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6700;&#x4E0B;&#x65B9;<code>Summary</code>&#x7A97;&#x683C;&#x67E5;&#x770B;&#x89E6;&#x53D1;&#x52A8;&#x753B;&#x4E8B;&#x4EF6;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x70B9;&#x51FB;<code>Initiator</code>&#x540E;&#x7684;<code>reveal</code>&#x94FE;&#x63A5;&#xFF0C;&#x4F1A;&#x9AD8;&#x4EAE;&#x5230;&#x5F15;&#x8D77;&#x52A8;&#x753B;&#x4E8B;&#x4EF6;&#x7684;&#x4E8B;&#x4EF6;</li>
+</ul>
+<p><img src="https://i.loli.net/2019/05/05/5ccef012a3dba.gif" alt=""></p>
+<h2 id="&#x6027;&#x80FD;&#x76F8;&#x5173;&#x6269;&#x5C55;"><a name="&#x6027;&#x80FD;&#x76F8;&#x5173;&#x6269;&#x5C55;" class="anchor-navigation-ex-anchor" href="#&#x6027;&#x80FD;&#x76F8;&#x5173;&#x6269;&#x5C55;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6027;&#x80FD;&#x76F8;&#x5173;&#x6269;&#x5C55;" class="plugin-anchor" href="#&#x6027;&#x80FD;&#x76F8;&#x5173;&#x6269;&#x5C55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6027;&#x80FD;&#x76F8;&#x5173;&#x6269;&#x5C55;</h2>
+<ul>
+<li><a href="https://developers.google.com/web/fundamentals/performance/why-performance-matters/" target="_blank">&#x7F51;&#x9875;&#x6027;&#x80FD;-&#x6027;&#x80FD;&#x6A21;&#x578B;/&#x52A0;&#x8F7D;/&#x6E32;&#x67D3;/&#x5BA1;&#x8BA1;/&#x4F18;&#x5316;</a></li>
+<li><a href="https://aerotwist.com/blog/the-anatomy-of-a-frame/" target="_blank">the-anatomy-of-a-frame - &#x4E00;&#x4E2A;&#x5E27;&#x7684;&#x5256;&#x6790;</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference" target="_blank">&#x5E38;&#x89C1;&#x7684;&#x65F6;&#x95F4;&#x7EBF;&#x4E8B;&#x4EF6;&#x53C2;&#x8003;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="devtools_05_network.html" class="navigation navigation-prev " aria-label="Previous page: 第五篇-Network面板">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="devtools_07_memory.html" class="navigation navigation-next " aria-label="Next page: 第七篇-Memory面板与内存">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第六篇-Performance面板与性能","level":"3.6","depth":1,"next":{"title":"第七篇-Memory面板与内存","level":"3.7","depth":1,"path":"devtools/devtools_07_memory.md","ref":"devtools/devtools_07_memory.md","articles":[]},"previous":{"title":"第五篇-Network面板","level":"3.5","depth":1,"path":"devtools/devtools_05_network.md","ref":"devtools/devtools_05_network.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./src/css/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/scarsu"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"./src/images/donate.png","title":"","button":"赞赏","alipayText":" "},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"scarsu","repo":"myGitbook","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"ScarSu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ScarSu's Gitbook","language":"zh-hans","gitbook":"3.2.3","description":"Outputing is Learning"},"file":{"path":"devtools/devtools_06_performance.md","mtime":"2019-05-17T01:26:07.914Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-17T11:05:40.341Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
