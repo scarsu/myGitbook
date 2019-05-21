@@ -5,3 +5,4 @@ node_modules/
 .deploy*/
 public/
 package-lock.json
+_book/
