@@ -2,11 +2,11 @@
 
 ### About
 * [我的博客](https://www.scarsu.com)
-* [ 关于本书](README.md)
+* [关于本书](README.md)
 
 
 ### Devtools新手入门
-  * [Devtools入门概览](devtools/devtools_intro_share.md)
+  * [Devtools新手入门](devtools/devtools_intro_share.md)
   
 ### Devtools老司机养成
   * [第一篇-介绍](devtools/devtools_01_intro.md)
