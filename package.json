@@ -1,0 +1,33 @@
+{
+    "name": "mygitbook",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "gitbook": "^2.6.9",
+        "gitbook-cli": "^2.3.2",
+        "gitbook-plugin-anchor-navigation-ex": "^1.0.14",
+        "gitbook-plugin-anchors": "^0.7.1",
+        "gitbook-plugin-donate": "^1.0.2",
+        "gitbook-plugin-expandable-chapters-small": "^0.1.7",
+        "gitbook-plugin-favicon": "^0.0.2",
+        "gitbook-plugin-github": "^2.0.0",
+        "gitbook-plugin-github-buttons": "^3.0.0",
+        "gitbook-plugin-sharing-plus": "^0.0.2",
+        "gitbook-plugin-splitter": "^0.0.8"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/scarsu/myGitbook.git"
+    },
+    "author": "ScarSu",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/scarsu/myGitbook/issues"
+    },
+    "homepage": "https://github.com/scarsu/myGitbook#readme"
+}
