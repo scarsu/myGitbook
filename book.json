@@ -19,7 +19,14 @@
         "github-buttons",
         "sharing-plus",
         "anchor-navigation-ex",
-        "favicon"
+        "favicon",
+        "code",
+        "chapter-fold",
+        "-lunr",
+        "-search",
+        "search-pro",
+        "lightbox",
+        "pageview-count"
     ],
     "pluginsConfig": {
         "github": {
@@ -74,6 +81,9 @@
                 "120x120": "./src/images/apple-touch-icon.jpg",
                 "180x180": "./src/images/apple-touch-icon.jpg"
             }
+        },
+        "theme-default": {
+            "showLevel": false
         }
     }
 }

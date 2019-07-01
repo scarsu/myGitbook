@@ -3,14 +3,9 @@
 ## 相关
 
 -   本文作者：[ScarSu](www.scarsu.com)
--   [进阶系列文链接](https://www.scarsu.com/categories/devtools%E8%80%81%E5%8F%B8%E6%9C%BA%E5%85%BB%E6%88%90%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/)
+-   [进阶系列文链接](https://doc.scarsu.com/devtools/devtools_01_intro.html)
 -   本文基于 chrome 浏览器版本 73.0.3683.103（正式版本）总结
--   本文目的：关于【devtools 能做什么】建立完善的知识结构，至于怎么做，请查阅官方文档；另工具类知识需要实践，建议阅读本文时打开 [sample](https://masteringdevtools.com/)用 devtools 操作一遍
--   参考 1：[google developers 官方文档](https://developers.google.com/web/tools/chrome-devtools/)
--   参考 2：来自作者 Jon Kuoerman 在 FrontEndMaster 的 [Mastering Chrome Developer Tools v2 课程](https://frontendmasters.com/courses/chrome-dev-tools-v2)
--   参考 3：来自 作者 Tomek Sułkowski 在 medium 的[系列文章](https://medium.com/@tomsu)
--   [系列文脑图.xmind]()
--   [脑图.png](https://i.loli.net/2019/04/19/5cb95639a9f73.png)
+-   参考 ：[google developers 官方文档](https://developers.google.com/web/tools/chrome-devtools/)
 
 ## web devtool 历史
 
@@ -20,7 +15,7 @@
 
 ## Chrome Devtools 界面概览
 
-![000devtoolsAll.png](https://i.loli.net/2019/04/19/5cb955bed88ce.png)
+![000devtoolsAll.png](https://i.loli.net/2019/04/19/5cb955bed88ce.png)；
 
 ## Tips and Tricks
 
@@ -41,13 +36,14 @@
     shift按七次，显示隐藏的实验性功能（比如terminal
 ```
 
--   或者使用金丝雀版 chrome - [Canary - 开发者专用的每日更新版](https://www.google.cn/chrome/canary/)
+-   金丝雀版 chrome - [Canary - 开发者专用的每日更新版](https://www.google.cn/chrome/canary/)
+-   开发者版 chrome - [Canary - 开发者专用的每周更新版](https://www.google.cn/chrome/dev/)
 
 ## Elements 面板
 
 使用 Chrome DevTools 的 Elements 面板检查和实时编辑页面的 HTML 与 CSS
 
-![Elements 面板](../images/devtools/000.png)
+![Elements 面板](https://i.loli.net/2019/06/03/5cf4a9da59be527769.png)
 
 ### Inspect Mode
 
@@ -69,9 +65,9 @@
 ### DOM 树
 
 在元素面板左侧是当前页的 DOM 树
-![0](../images/devtools/010.png)
+![0](https://i.loli.net/2019/06/03/5cf4aa13906d615289.png)
 
-在 DOM 树中你可以：
+在 DOM 树中可以：
 
 -   直接增/删/改/复制/拖放移动 DOM 元素，查看实时效果(非持久化)
 -   添加元素断点(节点移除断点，属性变更断点，子树变更断点)
@@ -80,7 +76,7 @@
 -   按快捷键**h**来快速隐藏/显示元素当前元素及其后代元素(原理是 visibility 设为 hidden,不影响其他元素,不引起重绘)
 -   按住 alt 键 点击 dom 元素前的箭头：全部折叠/展开当前元素及其后代元素
 
-    ![0](../images/devtools/011.png)
+    ![0](https://i.loli.net/2019/06/03/5cf4aa2c66c6183499.png)
 
 ### Styles
 
@@ -91,7 +87,7 @@
 -   每条样式属性是否命中
 -   可以直接增/删/改元素样式，查看实时效果(非持久化)
 
-![0](../images/devtools/020.png)
+![0](https://i.loli.net/2019/06/03/5cf4aa3edd33430557.png)
 
 ### color picker
 
@@ -114,14 +110,14 @@
 -   点开每一条最终值，可以看到所有该条样式的规则，以及代码来源
 -   勾选**show all**选项，会同时列出元素**继承 / 默认**样式
 
-![0](../images/devtools/030.png)
+![0](https://i.loli.net/2019/06/03/5cf4aa5b8838377487.png)
 
 ### Event Listeners
 
 -   在 Event Listeners 窗格中，可以看到元素的事件监听器
 -   例如"load","DOMContentLoaded","click"等，以及每个事件对应的事件处理函数
 
-![0](../images/devtools/040.png)
+![0](https://i.loli.net/2019/06/13/5d01e076e584425630.png)
 
 在源代码中加 **行 debugger 断点**，或者**debug(函数)断点**(Sources 面板会提及这两种断点)，是需要代码维护成本的，有时候还会忘记删除；
 
@@ -133,34 +129,21 @@
 
 在面板右侧 DOM Breakpoints 中，可以查看**元素断点**
 
-![0](../images/devtools/051.png)
+![0](https://i.loli.net/2019/06/03/5cf4aa7a33a2334307.png)
 
 相应的在左侧 DOM 树右键点击元素，可以给元素添加断点
 
 元素断点有三种类型：属性变更，子树变更，节点删除
 
 例如添加“node removal”断点，就会在 有代码移除当前节点时，在当前行代码执行前暂停执行，并自动转换到 Sources 面板，以便做进一步调试
-![0](../images/devtools/050.png)
-
-### Properties
-
-Properties 面板会列出元素 DOM 底层相关属性
-![0](../images/devtools/060.png)
-
-### Accessibility(可访问性)
-
--   在辅助功能树中查看元素的位置(可访问性树/无障碍树是 DOM 树的子集。它只包含来自 DOM 树的元素，这些元素可以展示在屏幕阅读器中页面的内容。
--   查看元素的 ARIA 属性(ARIA 属性确保屏幕阅读器具有所需的所有信息，以便正确表示页面的内容。
--   查看元素的计算辅助功能属性(某些辅助功能属性由浏览器动态计算。可以在“ 辅助功能”窗格的“ 计算属性”部分中查看这些属性
-
-![accessibility.png](https://i.loli.net/2019/04/21/5cbc83e1561e4.png)
+![0](https://i.loli.net/2019/06/03/5cf4aa879865e17312.png)
 
 ## Console 面板
 
 Console 面板是浏览器的控制台，也是 Devtools 的灵魂。
 
 可以通过**设置->Show Console drawer**或者**Esc 快捷键**让 Console 在每个面板都能显示。
-![0](../images/devtools/100.png)
+![0](https://i.loli.net/2019/06/03/5cf4aaa5f1e3422250.png)
 
 ### message
 
@@ -175,7 +158,7 @@ Console 面板是浏览器的控制台，也是 Devtools 的灵魂。
 -   通过**Hide network**选择显示/隐藏网络请求的错误信息(例如 GET xxx 404)
 -   通过**Preserve log**选择保留历史记录，即刷新页面后是否还显示先前的消息
 
-![0](../images/devtools/110.png)
+![0](https://i.loli.net/2019/06/03/5cf4aab869c8a85783.png)
 
 ### javascript 实时执行环境
 
@@ -189,49 +172,34 @@ Console 面板是浏览器的控制台，也是 Devtools 的灵魂。
 
 可以通过左上的下拉列表，选择不同的**执行环境**
 
-![0](../images/devtools/120.png)
+![0](https://i.loli.net/2019/06/03/5cf4aac95398455074.png)
 
 top 是最外层的顶级页面,其他的是 iframe 子页面
-
-默认情况下
-
--   子 frame 中：
-
-```js
-(window === self) === self.window;
-//top.window是顶级页面top的全局变量window
-```
-
--   top frame 中：
-
-```js
-(((window === self) === self.window) === top) === top.window;
-```
 
 ### console 中的`$`符号：
 
 -   可以通过`$0`，获取当前在 Elements 面板所选中的元素节点
 -   如果 `$` 在当前页面没被占用，可以用来替代 document.querySlector 方法使用
 -   `$$` 是 document.querySelectorAll 方法的更佳替代，因为 document.querySelectorAll 返回的是 nodeList(NodeList)，而`$$`能直接返回数组(Array)
-    ![0](../images/devtools/131.png)
+    ![0](https://i.loli.net/2019/06/03/5cf4aadf0381221831.png)
 -   `$_`可以引用上一次执行的结果
-    ![0](../images/devtools/132.png)
+    ![0](https://i.loli.net/2019/06/03/5cf4aae17ead896661.png)
 -   如果需要使用 npm 的包，可以安装 Console Importer 插件，用`$i`方法引入 npm 中的库
-    ![0](../images/devtools/133.gif)
+    ![0](https://i.loli.net/2019/06/03/5cf4aae3f1a0221583.gif)
 
 ### console 下的方法：
 
 -   除了被用烂了的`console.log()`（当然 console.log 也有特别一点的用法）
-    ![0](../images/devtools/191.png)
+    ![0](https://i.loli.net/2019/06/03/5cf4ab4d3e91911373.png)
 -   console 对象还有 console.error/clear/debug/count/time/table/tarce 等等方法
 -   直接在 console 中输入 console，可以看到 console 对象下的所有方法
-    ![0](../images/devtools/140.png)
+    ![0](https://i.loli.net/2019/06/03/5cf4ab5e5d30e65867.png)
 -   例如 console.table(obj)可以把你的对象以可视化的表格形式进行输出
-    ![0](../images/devtools/135.gif)
+    ![0](https://i.loli.net/2019/06/03/5cf4ab71e90e874049.gif)
 -   例如可以使用 console.time()和 console.timeEnd()方法来测量时间差
-    ![0](../images/devtools/160.png)
+    ![0](https://i.loli.net/2019/06/03/5cf4ab744d6a089649.png)
 -   另:console 命令行还内置了一些 API 方法，例如 queryObjects(),可以返回指定类型的对象下所有的实例化的对象
-    ![0](../images/devtools/170.png)
+    ![0](https://i.loli.net/2019/06/03/5cf4ab8a6b20972501.png)
 
 ```js
 queryObjects(Object); //返回所有object对象
@@ -240,9 +208,9 @@ queryObjects(Array); //返回所有数组
 ```
 
 -   monitor(function)方法来追踪函数调用信息，当函数被执行，会输出追踪信息
-    ![0](../images/devtools/180.png)
+    ![0](https://i.loli.net/2019/06/03/5cf4ab9c55a3f55468.png)
 -   monitorEvents(el,eventType)方法来追踪事件
-    ![0](../images/devtools/190.png)
+    ![0](https://i.loli.net/2019/06/03/5cf4ab9eaba5f43869.png)
 
 ## Sources 源文件面板
 
@@ -264,7 +232,7 @@ queryObjects(Array); //返回所有数组
     右击Sources面板中的源代码的行号
     选择“Add conditional breakpoint”
     ```
-    ![0](../images/devtools/201.GIF)
+    ![0](https://i.loli.net/2019/06/03/5cf4eeebeb78835989.gif)
 3. DOM 断点
     ```
     即Elements面板提及过的三种DOM断点：
@@ -272,20 +240,20 @@ queryObjects(Array); //返回所有数组
     - 节点删除断点
     - 子树变更断点
     ```
-    ![0](../images/devtools/202.GIF)
+    ![0](https://i.loli.net/2019/06/03/5cf4abbb04c6c25181.gif)
 4. XHR/Fetch 断点
     ```
     在页面发出XHR或Fetch请求前加断点
     ```
-    ![0](../images/devtools/203.GIF)
+    ![0](https://i.loli.net/2019/06/03/5cf4abc790a6244461.gif)
 5. Event Listener 事件监听断点
     ```
     可以在所有类型的事件函数被出发前加断点
     ```
-    ![0](../images/devtools/204.png)
+    ![0](https://i.loli.net/2019/06/03/5cf4abc8c9efb50152.png)
 6. Exception 异常断点
 
-    ![0](../images/devtools/205.png)
+    ![0](https://i.loli.net/2019/06/03/5cf4abca96ac072660.png)
 
 7. Function 函数断点
 
@@ -293,81 +261,40 @@ queryObjects(Array); //返回所有数组
     把想调试的函数名作为参数，调用debug()函数，可以在每次执行该函数前暂停执行代码
     ```
 
-    ![0](../images/devtools/206.gif)
+    ![0](https://i.loli.net/2019/06/03/5cf4abeb2a86948381.gif)
 
 ### Debug
 
 -   函数调用栈 Call Stack：Call Stack 是 time traveling 的，即点击栈中的任一节点，当前的作用域和局部变量等信息，都会模拟至该节点执行时的状态
 
-![0](../images/devtools/209.png)
+![0](https://i.loli.net/2019/06/03/5cf4abfcc126341109.png)
 
 -   全局作用域 Global ，局部作用域 Local ，闭包作用域 Closure
 
-![0](../images/devtools/210.png)
+![0](https://i.loli.net/2019/06/03/5cf4ac0980d1016641.png)
 
 -   step over next function
 -   step into next function
 -   step out current function
 -   step (与 step over/into 的区别就是，step 会优先尝试 step into，当没有可步入的代码时，就会执行 step over)
 
-![0](../images/devtools/207.png)
+![0](https://i.loli.net/2019/06/03/5cf4ac1b7a4e440822.png)
 
 -   long resume：恢复执行，并将断点停用 500ms
 
-![0](../images/devtools/211.png)
+![0](https://i.loli.net/2019/06/03/5cf4ac3a7458f65851.png)
 
 -   Continue to here：继续执行至此行
 
-![0](../images/devtools/207.gif)
+![0](https://i.loli.net/2019/06/03/5cf4ac4622fe745522.gif)
 
 -   Restart Frame：重新执行函数调用堆栈中的某一帧
 
-![0](../images/devtools/208.gif)
+![0](https://i.loli.net/2019/06/03/5cf4ac556cc2358478.gif)
 
 -   行断点内的多个箭头：行内断点（行内的，可 step into 的 执行点
 
 ![](https://i.loli.net/2019/05/13/5cd969192e3cf64417.png)
-
-### Devtools Nodejs debug
-
--   node 执行 js 文件，文件名前加--inspect 标志，启用浏览器 nodejs 调试
-
-![nodeDebug.png](https://i.loli.net/2019/04/22/5cbd33c700aed.png)
-
--   点击 devtools 中，左上角的 devices mode 右侧的绿色按钮，即可启用 node 服务端中的脚本调试
--   [更多相关](https://nodejs.org/en/docs/guides/debugging-getting-started/)
-
-### BlackBox
-
--   BlackBox 的用途：
-
-    “BlackBox Script”可以在调试中忽略某些脚本(此处的 BlackBox 为动词)，在 Call Stack 堆栈中会将该脚本隐藏，单步调试时也不会步入脚本中的任何函数
-
-    ```
-    function animate() {
-    prepare();
-    lib.doFancyStuff(); // A
-    render();
-    }
-    ```
-
-    例如以上代码的 A 行，调用的是第三方库的 doFancyStuff 函数
-
-    如果我确认该第三方库没有 bug
-
-    就可以 BlackBox 整个第三方库的 js 脚本，在调试中跳过这些代码的执行
-
--   三种添加 BlackBox 的方法：
-
-1. 在源代码窗格右键，选择"BlackBox Script"
-   ![0](../images/devtools/212.gif)
-
-2. 在 Call Stack 中右键某一帧，选择"BlackBox Script"
-   ![0](../images/devtools/211.gif)
-
-3. 在设置中的 Blackboxing 面板添加**正则表达式**匹配**文件名**
-
-    ![0](../images/devtools/213.gif)
 
 ### Workspace：Devtools as IDE 将更改持久化
 
@@ -379,34 +306,6 @@ queryObjects(Array); //返回所有数组
 -   所有 sources 面板的文件，都可以右键选择`local modifications`，查看所有更改
 -   对 DOM 树的更改不会持久化至 html 文件：因为 dom 的最终表现，受到 html、css、javascript 的共同影响，DOM 树 !== HTML，因此可以在 sources 中直接更改 html 文件并保存
 
-### Source Map
-
--   组合/压缩 css,js 文件是常见的性能优化方案，但是会对开发调试造成困扰
--   Source Map 用于将生产代码映射至源代码，Chrome 和 firefox 都内置了对 Source Map 的支持
--   在 Chorme devtools 中，settings -> preferen -> sources 中，选中`Enable Javascript source maps`和`Enable CSS source maps`
--   source map 映射信息存在 json 对象中，保存在 .map 文件中，可以由编译程序添加注释`//# sourceMappingURL=/path/to/script.js.map`至生产文件末尾，也可以由服务端在响应头中添加`X-SourceMap: /path/to/script.js.map`，将 map 文件与生产文件对应。[更多关于 source map 的介绍](https://blog.teamtreehouse.com/introduction-source-maps)
-
-![sourceMap.png](https://i.loli.net/2019/04/22/5cbd10f324e07.png)
-
-### Local Overrides
-
--   通过 Local Overrides，可以在 DevTools 中进行更改，并在页面加载后保留这些更改
--   在 Sources 面板左侧选择 Overrides，指定 DevTools 应保存更改的目录，当在 DevTools 中进行更改时，DevTools 会将修改后的文件的副本保存到所选的本地目录中，重新加载页面时，DevTools 提供本地修改的文件，而不是请求的网络资源。
--   与 Workspace 相似的，不支持保存对 DOM 树的更改，需要直接更改 html 源文件。
-
-### Snippets 代码片段
-
--   在 Sources 面板左侧选择 Snippets，或`crlt shift p`输入 snippet 打开 Snippets 面板，可以创建并保存常用的代码片段，和用 gist 类似
--   snippets 中，选中代码并`ctrl enter`，或点击右下角的执行按钮，即可执行代码片段
-
-![snippet.png](https://i.loli.net/2019/04/22/5cbd147145955.png)
-
-### Content scripts
-
--   这部分脚本是浏览器插件的脚本，在特定网页的上下文中运行。（与插件运行在服务端的脚本，页面上引用的脚本，页面上 script 中的内嵌脚本都不同
--   插件在服务端的脚本可以访问所有 WebExtension JavaScript API，但它们无法直接访问网页内容。
--   Content scripts 只能访问 WebExtension API 的一小部分，但它们可以使用消息传递系统与后台脚本进行通信，从而间接访问 WebExtension API。
--   如果有浏览器插件相关的工作，可以更深入[研究](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions)，不赘述。
 
 ## Network 面板
 
@@ -474,13 +373,6 @@ queryObjects(Array); //返回所有数组
 
 -   Priority：High,Highest,Low。根据时间线中的蓝线和红线（DOMContentLoaded 和 load），以及请求的优先级，可以从结果的角度观察浏览器的加载流程。
 
-### Websocket
-
--   在 network 的 filter 条件后，选择`ws`类型的请求，即可看到所有 Websocket 请求
--   在请求详情的 Message 栏中，可以看到 wensocket 全双工通信中客户端接收和发送的信息
-
-![networkWebsocket.png](https://i.loli.net/2019/04/22/5cbdbe96a4597.png)
-
 ### Color Code：瀑布图中的几种颜色与代码
 
 ![colorCode.png](https://i.loli.net/2019/04/22/5cbdc5acaff77.png)
@@ -508,10 +400,6 @@ queryObjects(Array); //返回所有数组
 -   load — 浏览器已经加载了所有的资源（图像，样式表等）。
 -   beforeunload/unload -- 当用户离开页面的时候触发。
 -   [更多](https://developer.mozilla.org/zh-CN/docs/Web/Events/DOMContentLoaded)
-
-### data URLs
-
--   即前缀为 data: 协议的的 URL，其允许内容创建者向文档中嵌入小文件，例如浏览器 API canvas 支持的 base64 编码格式图片，[更多相关](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)
 
 ## Performance 性能面板
 
@@ -583,17 +471,7 @@ queryObjects(Array); //返回所有数组
 
 ![](https://i.loli.net/2019/05/05/5ccee92a52b29.png)
 
-### FPS 仪表工具
-
--   通过`more -> more tools -> Rendering` 或者 `ctrl+shift+p -> rendering` 打开`Rendering`面板
-
-![](https://i.loli.net/2019/05/05/5ccee9d226d2e.png)
-
--   启用`FPS meter`，即可看到的页面实时帧率
-
-![](https://i.loli.net/2019/05/05/5cceeb3144e12.gif)
-
-### Mian
+### Main
 
 -   点击三角箭头展开`Main`区域，可以看到主线程上事件的`火焰图`
 -   x 轴是时间，每一块代表一个事件，y 轴代表堆栈，事件的上下堆叠，代表上层事件引发/调用了下层事件
@@ -616,98 +494,3 @@ queryObjects(Array); //返回所有数组
 -   [网页性能-性能模型/加载/渲染/审计/优化](https://developers.google.com/web/fundamentals/performance/why-performance-matters/)
 -   [the-anatomy-of-a-frame - 一个帧的剖析](https://aerotwist.com/blog/the-anatomy-of-a-frame/)
 -   [常见的时间线事件参考](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference)
-
-## Memory 内存面板
-
-### 内存 && 内存泄露
-
-内存占用：
-
-1. allocate 分配内存(eg 声明变量
-2. 使用内存
-3. release 释放内存
-
-内存泄漏：
-
--   `内存泄露-Memory Leak`：内存被占用后无法被 release，且无法被垃圾回收器回收
--   内存泄漏会引起性能问题，且时间越久越严重，因为被占用且无法回收的内存只会增加不会减少
--   `垃圾回收-Garbage Collect-GC`：浏览器收回内存。 浏览器决定何时进行垃圾回收。 回收期间，所有脚本执行都将暂停。因此，如果浏览器经常进行垃圾回收，脚本执行就会被频繁暂停
-
-### 造成内存泄露常见原因
-
--   `fogotten timer`被遗忘的计时器：例如调用 setInterval()方法一定要加结束条件
--   `Dettached HTMLElement`分离的 dom 节点：在 dom 被移除后，dom 变量仍然存在
-
-### 内存监控 1-Task manager 任务管理器
-
--   chorme 浏览器 -> task manager 任务管理器工具中，可以监控每个 tab 页的 js 内存占用大小
-
-![](https://i.loli.net/2019/05/07/5cd194ba3a655.png)
-
--   `Memory` 列表示原生内存。DOM 节点存储在原生内存中。 如果此值正在增大，则说明正在创建 DOM 节点。
--   `JavaScript Memory`列表示 JS 堆。此列包含两个值。 实际大小表示页面上的对象正在使用的内存量。 如果此数字在增大，要么是正在创建新对象，要么是现有对象正在增长。
-
-### 内存监控 2-Devtools Performance 面板
-
--   在`Performance`面板记录性能时，勾选`memory`即可在分析结果中看到 memory 占用情况
-
-![](https://i.loli.net/2019/05/05/5ccee6f4b968d.png)
-
-```js
-//示例1:正常的内存占用与GC
-
-var x = [];
-
-function grow() {
-    for (var i = 0; i < 10000; i++) {
-        document.body.appendChild(document.createElement("div"));
-    }
-    x.push(new Array(1000000).join("x"));
-}
-
-setInterval(grow, 100);
-```
-
-![](https://i.loli.net/2019/05/07/5cd19db41fbbc.png)
-
-```js
-//示例2:不可被GC的内存泄漏
-
-function grow() {
-    // for (var i = 0; i < 10000; i++) {
-    //     document.body.appendChild(document.createElement("div"));
-    // }
-    // x.push(new Array(1000000).join("x"));
-    var ul = document.createElement("ul");
-    for (var i = 0; i < 10; i++) {
-        var li = document.createElement("li");
-        ul.appendChild(li);
-    }
-    detachedTree = ul;
-}
-
-setInterval(grow, 1000);
-```
-
-![](https://i.loli.net/2019/05/07/5cd1a62aa1bfd.png)
-
-### 内存监控 3-Devtools Memory 面板
-
-![](https://i.loli.net/2019/05/07/5cd18fa5d8489.png)
-
--   如上图所示，在右侧三种内存分析模式选择一种后，即可点击左上角`record`开始记录内存
-
-1.  `Heap snapshot`堆快照，记录当前时间点内存中页面 js 对象和 dom 节点的分配情况
-2.  `Allocation instrumentation on timeline`按时间轴记录内存，可以选记录内存分配调用栈(可以帮助定位到具体分配内存的源码)
-3.  `Allocation sampling`使用抽样方法记录内存分配。具有最小的性能开销，可用于长时间运行的操作。提供了由 JavaScript 执行堆栈细分的良好近似分配。
-
--   左上角的垃圾桶图标`Collect garbage`是强制执行一次垃圾回收，内存监控的最佳实践是在监控内存前执行一次强制垃圾回收
-
--   利用上述示例 2 代码，执行时间线 Memory 分析：
-
-![](https://i.loli.net/2019/05/07/5cd1a7db0cfe0.png)
-
-### 扩展
-
--   [内存相关术语](https://developers.google.com/web/tools/chrome-devtools/memory-problems/memory-101)
--   [深入内存分析](https://developers.google.com/web/tools/chrome-devtools/memory-problems/heap-snapshots)
