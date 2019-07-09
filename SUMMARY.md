@@ -5,10 +5,10 @@
 * [www.scarsu.com](https://www.scarsu.com)
 
 
-### Devtools新手入门
-  * [Devtools新手入门](devtools/devtools_rookie_intro.md)
-  
-### Devtools老司机养成
+<!-- ### 译文系列 -->
+
+### Devtools进阶系列
+  * [新手篇-Devtools新手入门](devtools/devtools_rookie_intro.md)
   * [第一篇-介绍](devtools/devtools_01_intro.md)
   * [第二篇-Elements面板](devtools/devtools_02_elements.md)
   * [第三篇-Console面板](devtools/devtools_03_console.md)
