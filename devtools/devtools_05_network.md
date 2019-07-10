@@ -43,6 +43,7 @@
 ## 分析请求/请求列表
 
 -   重播请求：右键点击 Requests 表格中的请求 -> `Replay XHR`
+-   讲请求复制为 Fetch 代码 -> `Copy As Fetch`
 -   手动清除浏览器缓存：右键点击 Requests 表格中的任意位置 -> 选择 `Clear Browser Cache`
 -   手动清除浏览器 Cookie：右键点击 Requests 表格中的任意位置 -> 选择 `Clear Browser Cookies`
 -   自定义列表中展示的列

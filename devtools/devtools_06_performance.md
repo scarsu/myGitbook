@@ -103,3 +103,26 @@
 -   [网页性能-性能模型/加载/渲染/审计/优化](https://developers.google.com/web/fundamentals/performance/why-performance-matters/)
 -   [the-anatomy-of-a-frame - 一个帧的剖析](https://aerotwist.com/blog/the-anatomy-of-a-frame/)
 -   [常见的时间线事件参考](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference)
+
+## 浏览器并发请求数
+- 现象：
+    同一时间针对同一域名下的请求有一定数量限制。超过限制数目的请求会被阻塞。
+
+- 原因：
+    基于端口数量和线程切换开销的考虑，浏览器不可能无限量的并发请求。
+
+- 导致：
+    有大量请求的站点，响应较慢，因为并发请求会被阻塞。
+
+-   ![不同浏览器的限制数](/images/devtools/214.png)
+
+- 解决方法：
+  1. 用不同域名（hash domain，cookie free）
+    例如知乎的图片都是放在zhiimg.com域名下获取的。
+    cookie free是指，例如知乎主站zhihu.com域名下有很多cookie，换成zhihuimg.com请求图片时，就不会把zhihu上的cookie发过去，减小所需带宽。
+
+  2. 减少请求数
+  雪碧图
+  合并压缩css/js（另一个原因是为了减少重绘）
+  利用Cache-Control等缓存静态资源，在更新静态资源时使用不同url或文件名带上版本
+  懒加载，出现再加载

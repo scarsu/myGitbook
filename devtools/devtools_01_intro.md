@@ -17,6 +17,42 @@
 -   [Live DOM Viewer](https://software.hixie.ch/utilities/js/live-dom-viewer/)
 -   [Firebug](https://getfirebug.com/)
 
+## Chrome相关介绍
+#### Chromium
+    是谷歌的开源项目，由开源社区维护。
+    
+    国产的所有 “双核浏览器”，都是基于 Chromium 开发的，甚至 Chrome 也是基于它。
+    
+    我们下载的 Chromium 浏览器都是其源码未经修改的直接编译版本。
+    
+    Chromium 的内核版本比 Chrome 明显领先，新的技术都是先在 Chromium 上应用。
+    
+    几乎每天都在进行更新;
+    
+#### Chrome
+    基于 Chromium，但是它是闭源的！
+    所以有这样的一种说法：谷歌把核心技术都保留在了之家的 Chrome 中。
+    
+    支持了一些商业的收费插件，这些是不会出现在开源软件中的： H.264编码、mp3编码
+    
+    Chrome 内置了 Flash，Chromium 需要额外安装
+    
+    据说?在网页渲染方面 Chrome 也悄悄有一些特别的优化。
+    
+    集成了更多的谷歌服务（RanBinNuan），同时也有更多的限制，比如目前使用 Chrome 需要一定手段才能安装非商店的扩展，一旦被发现还会永远禁用，但 Chromium 就没有这些限制！
+    
+#### Dev Canary Stable Beta
+    是Chrome的四个版本
+    
+    Stable 稳定版（几月一次更新）
+    Beta 测试版（1 月一次更新）
+    Dev 开发者版（1 星期一次更新）
+    Canary 金丝雀版（脚步几乎同步 Chromium，天天更新）图标采用了特别的土豪金版神奇宝贝球。
+    
+    新版发布速度递增
+    新功能数量递增
+    稳定性递减
+
 ## Chrome Devtools 界面概览
 
 ![000devtoolsAll.png](https://i.loli.net/2019/04/19/5cb955bed88ce.png)
