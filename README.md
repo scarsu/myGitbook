@@ -1,7 +1,8 @@
 
 <center>
-    <h1> This is </h1>
-    <h3> ScarSu's gitbook for Serialize Outputing</h3>
+    <h1> This is ScarSu's gitbook</h1>
+    <h1> for </h1>
+    <h3> Serialize Outputing</h3>
     <h3> ❤️ </h3>
 </center>
 
