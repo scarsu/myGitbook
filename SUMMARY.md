@@ -28,7 +28,7 @@
 
 ### FED 学习路径/checklist
 * [【转】33_js_concepts每个JS开发者应该懂的概念](learning/33_js_concepts.md)
-* [学习资源分析](learning/resources.md)
+* [学习资源分享](learning/resources.md)
 * [学习路径推荐](learning/route.md)
 * [FED 2019 Checklist](learning/checklist2019.md)
 
