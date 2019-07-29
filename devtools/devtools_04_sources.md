@@ -5,7 +5,7 @@
 -   Debug : 在源代码面板中可以设置**断点**来调试 JavaScript ，比 console.log()调试更快速高效
 -   Devtools as IDE : 通过 Workspaces（工作区）连接本地文件来使用开发者工具的**实时编辑器**
 
-![0](../images/devtools/200.png)
+![0](https://i.loli.net/2019/07/29/5d3e54ad6595d17473.png)
 
 ## 七种断点类型
 
@@ -20,7 +20,7 @@
     右击Sources面板中的源代码的行号
     选择“Add conditional breakpoint”
     ```
-    ![0](../images/devtools/201.GIF)
+    ![0](https://i.loli.net/2019/07/29/5d3e54bc1e26c94874.gif)
 3. DOM 断点
     ```
     即Elements面板提及过的三种DOM断点：
@@ -28,20 +28,20 @@
     - 节点删除断点
     - 子树变更断点
     ```
-    ![0](../images/devtools/202.GIF)
+    ![0](https://i.loli.net/2019/07/29/5d3e54c7ee26f77001.gif)
 4. XHR/Fetch 断点
     ```
     在页面发出XHR或Fetch请求前加断点
     ```
-    ![0](../images/devtools/203.GIF)
+    ![0](https://i.loli.net/2019/07/29/5d3e54d8de3ba68180.png)
 5. Event Listener 事件监听断点
     ```
     可以在所有类型的事件函数被出发前加断点
     ```
-    ![0](../images/devtools/204.png)
+    ![0](https://i.loli.net/2019/07/29/5d3e54d8f005d73515.png)
 6. Exception 异常断点
 
-    ![0](../images/devtools/205.png)
+    ![0](https://i.loli.net/2019/07/29/5d3e54d90b04490413.gif)
 
 7. Function 函数断点
 
@@ -49,36 +49,36 @@
     把想调试的函数名作为参数，调用debug()函数，可以在每次执行该函数前暂停执行代码
     ```
 
-    ![0](../images/devtools/206.gif)
+    ![0](https://i.loli.net/2019/07/29/5d3e54db0062099787.gif)
 
 ## Debug
 
 -   函数调用栈 Call Stack：Call Stack 是 time traveling 的，即点击栈中的任一节点，当前的作用域和局部变量等信息，都会模拟至该节点执行时的状态
 
-![0](../images/devtools/209.png)
+![0](https://i.loli.net/2019/07/29/5d3e556a3d2ff51804.png)
 
 -   全局作用域 Global ，局部作用域 Local ，闭包作用域 Closure
 
-![0](../images/devtools/210.png)
+![0](https://i.loli.net/2019/07/29/5d3e5579edff848268.png)
 
 -   step over next function
 -   step into next function
 -   step out current function
 -   step (与 step over/into 的区别就是，step 会优先尝试 step into，当没有可步入的代码时，就会执行 step over)
 
-![0](../images/devtools/207.png)
+![0](https://i.loli.net/2019/07/29/5d3e558950aa668631.png)
 
 -   long resume：恢复执行，并将断点停用 500ms
 
-![0](../images/devtools/211.png)
+![0](https://i.loli.net/2019/07/29/5d3e55951dbb174461.gif)
 
 -   Continue to here：继续执行至此行
 
-![0](../images/devtools/207.gif)
+![0](https://i.loli.net/2019/07/29/5d3e55b1cbe1030881.gif)
 
 -   Restart Frame：重新执行函数调用堆栈中的某一帧
 
-![0](../images/devtools/208.gif)
+![0](https://i.loli.net/2019/07/29/5d3e55be02afb66581.gif)
 
 -   行断点内的多个箭头：行内断点（行内的，可 step into 的 执行点
 
@@ -116,14 +116,14 @@
 -   三种添加 BlackBox 的方法：
 
 1. 在源代码窗格右键，选择"BlackBox Script"
-   ![0](../images/devtools/212.gif)
+   ![0](https://i.loli.net/2019/07/29/5d3e55d52054637081.gif)
 
 2. 在 Call Stack 中右键某一帧，选择"BlackBox Script"
-   ![0](../images/devtools/211.gif)
+   ![0](https://i.loli.net/2019/07/29/5d3e55d3bd9da13494.gif)
 
 3. 在设置中的 Blackboxing 面板添加**正则表达式**匹配**文件名**
 
-    ![0](../images/devtools/213.gif)
+    ![0](https://i.loli.net/2019/07/29/5d3e55d9e574935159.gif)
 
 ## Workspace：Devtools as IDE 将更改持久化
 

@@ -4,7 +4,7 @@
 
 使用 Chrome DevTools 的 Elements 面板检查和实时编辑页面的 HTML 与 CSS
 
-![Elements 面板](../images/devtools/000.png)
+![Elements 面板](https://i.loli.net/2019/07/29/5d3e521d6fbde79541.png)
 
 ## Inspect Mode
 
@@ -26,7 +26,7 @@
 ## DOM 树
 
 在元素面板左侧是当前页的 DOM 树
-![0](../images/devtools/010.png)
+![0](https://i.loli.net/2019/07/29/5d3e52339265738563.png)
 
 在 DOM 树中你可以：
 
@@ -37,7 +37,7 @@
 -   按快捷键**h**来快速隐藏/显示元素当前元素及其后代元素(原理是 visibility 设为 hidden,不影响其他元素,不引起重绘)
 -   按住 alt 键 点击 dom 元素前的箭头：全部折叠/展开当前元素及其后代元素
 
-    ![0](../images/devtools/011.png)
+    ![0](https://i.loli.net/2019/07/29/5d3e52c51ed0570682.png)
 
 ## Styles
 
@@ -48,7 +48,7 @@
 -   每条样式属性是否命中
 -   可以直接增/删/改元素样式，查看实时效果(非持久化)
 
-![0](../images/devtools/020.png)
+![0](https://i.loli.net/2019/07/29/5d3e524d5a48a76988.png)
 
 ## color picker
 
@@ -71,14 +71,14 @@
 -   点开每一条最终值，可以看到所有该条样式的规则，以及代码来源
 -   勾选**show all**选项，会同时列出元素**继承 / 默认**样式
 
-![0](../images/devtools/030.png)
+![0](https://i.loli.net/2019/07/29/5d3e525f4f2a311954.png)
 
 ## Event Listeners
 
 -   在 Event Listeners 窗格中，可以看到元素的事件监听器
 -   例如"load","DOMContentLoaded","click"等，以及每个事件对应的事件处理函数
 
-![0](../images/devtools/040.png)
+![0](https://i.loli.net/2019/07/29/5d3e52728065d88131.png)
 
 在源代码中加 **行 debugger 断点**，或者**debug(函数)断点**(Sources 面板会提及这两种断点)，是需要代码维护成本的，有时候还会忘记删除；
 
@@ -90,19 +90,19 @@
 
 在面板右侧 DOM Breakpoints 中，可以查看**元素断点**
 
-![0](../images/devtools/051.png)
+![0](https://i.loli.net/2019/07/29/5d3e5282c491d43866.png)
 
 相应的在左侧 DOM 树右键点击元素，可以给元素添加断点
 
 元素断点有三种类型：属性变更，子树变更，节点删除
 
 例如添加“node removal”断点，就会在 有代码移除当前节点时，在当前行代码执行前暂停执行，并自动转换到 Sources 面板，以便做进一步调试
-![0](../images/devtools/050.png)
+![0](https://i.loli.net/2019/07/29/5d3e529117f6c69468.png)
 
 ## Properties
 
 Properties 面板会列出元素 DOM 底层相关属性
-![0](../images/devtools/060.png)
+![0](https://i.loli.net/2019/07/29/5d3e52b143cc424671.png)
 
 ## Accessibility(可访问性)
 

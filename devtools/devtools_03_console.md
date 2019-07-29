@@ -5,7 +5,7 @@
 Console 面板是浏览器的控制台，也是 Devtools 的灵魂。
 
 可以通过**设置->Show Console drawer**或者**Esc 快捷键**让 Console 在每个面板都能显示。
-![0](../images/devtools/100.png)
+![0](https://i.loli.net/2019/07/29/5d3e5381c290f84642.png)
 
 ## message
 
@@ -20,7 +20,7 @@ Console 面板是浏览器的控制台，也是 Devtools 的灵魂。
 -   通过**Hide network**选择显示/隐藏网络请求的错误信息(例如 GET xxx 404)
 -   通过**Preserve log**选择保留历史记录，即刷新页面后是否还显示先前的消息
 
-![0](../images/devtools/110.png)
+![0](https://i.loli.net/2019/07/29/5d3e53989dba574108.png)
 
 ## javascript 实时执行环境
 
@@ -34,7 +34,7 @@ Console 面板是浏览器的控制台，也是 Devtools 的灵魂。
 
 可以通过左上的下拉列表，选择不同的**执行环境**
 
-![0](../images/devtools/120.png)
+![0](https://i.loli.net/2019/07/29/5d3e53a7d369f73554.png)
 
 top 是最外层的顶级页面,其他的是 iframe 子页面
 
@@ -58,25 +58,25 @@ top 是最外层的顶级页面,其他的是 iframe 子页面
 -   可以通过`$0`，获取当前在 Elements 面板所选中的元素节点
 -   如果 `$` 在当前页面没被占用，可以用来替代 document.querySlector 方法使用
 -   `$$` 是 document.querySelectorAll 方法的更佳替代，因为 document.querySelectorAll 返回的是 nodeList(NodeList)，而`$$`能直接返回数组(Array)
-    ![0](../images/devtools/131.png)
+    ![0](https://i.loli.net/2019/07/29/5d3e53c18483c36428.png)
 -   `$_`可以引用上一次执行的结果
-    ![0](../images/devtools/132.png)
+    ![0](https://i.loli.net/2019/07/29/5d3e53c198cdf46610.png)
 -   如果需要使用 npm 的包，可以安装 Console Importer 插件，用`$i`方法引入 npm 中的库
-    ![0](../images/devtools/133.gif)
+    ![0](https://i.loli.net/2019/07/29/5d3e53c1ae52088165.gif)
 
 ## console 下的方法：
 
 -   除了被用烂了的`console.log()`（当然 console.log 也有特别一点的用法）
-    ![0](../images/devtools/191.png)
+    ![0](https://i.loli.net/2019/07/29/5d3e53ec0c9c777415.png)
 -   console 对象还有 console.error/clear/debug/count/time/table/tarce 等等方法
 -   直接在 console 中输入 console，可以看到 console 对象下的所有方法
-    ![0](../images/devtools/140.png)
+    ![0](https://i.loli.net/2019/07/29/5d3e54117f36b48748.png)
 -   例如 console.table(obj)可以把你的对象以可视化的表格形式进行输出
-    ![0](../images/devtools/135.gif)
+    ![0](https://i.loli.net/2019/07/29/5d3e541ed227433392.gif)
 -   例如可以使用 console.time()和 console.timeEnd()方法来测量时间差
-    ![0](../images/devtools/160.png)
+    ![0](https://i.loli.net/2019/07/29/5d3e542c27e8b99508.png)
 -   另:console 命令行还内置了一些 API 方法，例如 queryObjects(),可以返回指定类型的对象下所有的实例化的对象
-    ![0](../images/devtools/170.png)
+    ![0](https://i.loli.net/2019/07/29/5d3e5480317cd69237.png)
 
 ```js
 queryObjects(Object); //返回所有object对象
@@ -85,6 +85,6 @@ queryObjects(Array); //返回所有数组
 ```
 
 -   monitor(function)方法来追踪函数调用信息，当函数被执行，会输出追踪信息
-    ![0](../images/devtools/180.png)
+    ![0](https://i.loli.net/2019/07/29/5d3e548f62a6723531.png)
 -   monitorEvents(el,eventType)方法来追踪事件
-    ![0](../images/devtools/190.png)
+    ![0](https://i.loli.net/2019/07/29/5d3e5494878e638089.png)

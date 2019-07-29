@@ -114,7 +114,7 @@
 - 导致：
     有大量请求的站点，响应较慢，因为并发请求会被阻塞。
 
--   ![不同浏览器的限制数](/images/devtools/214.png)
+-   ![不同浏览器的限制数](https://i.loli.net/2019/07/29/5d3e56236ee0b54748.png)
 
 - 解决方法：
   1. 用不同域名（hash domain，cookie free）

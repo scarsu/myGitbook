@@ -3,13 +3,12 @@
 ## 相关
 
 -   本文作者：[ScarSu](www.scarsu.com)
--   非新手可以直接跳过本文看进阶系列文👉🏻[进阶系列文链接](https://doc.scarsu.com/devtools/devtools_01_intro.html)
 -   本文基于 chrome 浏览器版本 73.0.3683.103（正式版本）总结
--   本文目的：关于【devtools 能做什么】建立完善的知识结构，至于怎么做，请查阅官方文档；另工具类知识需要实践，建议阅读本文时打开 [sample](https://masteringdevtools.com/)和 devtools 操作一遍
+-   本文目的：关于【devtools 能做什么】建立完善的知识结构，至于怎么做，请查阅官方文档；工具类知识需要实践，建议阅读本文时打开 [sample](https://masteringdevtools.com/)和 devtools 操作一遍
 -   参考 1：[google developers 官方文档](https://developers.google.com/web/tools/chrome-devtools/)
 -   参考 2：来自作者 Jon Kuoerman 在 FrontEndMaster 的 [Mastering Chrome Developer Tools v2 课程](https://frontendmasters.com/courses/chrome-dev-tools-v2)
 -   参考 3：来自 作者 Tomek Sułkowski 在 medium 的[系列文章](https://medium.com/@tomsu)
--   ![Devtools脑图.png](https://i.loli.net/2019/04/19/5cb95639a9f73.png)
+-   [Devtools脑图.png](https://i.loli.net/2019/04/19/5cb95639a9f73.png)
 
 ## web devtool 历史
 
