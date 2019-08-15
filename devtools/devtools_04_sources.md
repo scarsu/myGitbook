@@ -146,9 +146,11 @@
 
 ## Local Overrides
 
--   通过 Local Overrides，可以在 DevTools 中进行更改，并在页面加载后保留这些更改
+-   用于覆盖网络请求: 在source/page右键save for override或直接edit，保存的文件都被存储到overrides 指定目录(按照域名建立文件夹). 这种改写是临时的
 -   在 Sources 面板左侧选择 Overrides，指定 DevTools 应保存更改的目录，当在 DevTools 中进行更改时，DevTools 会将修改后的文件的副本保存到所选的本地目录中，重新加载页面时，DevTools 提供本地修改的文件，而不是请求的网络资源。
 -   与 Workspace 相似的，不支持保存对 DOM 树的更改，需要直接更改 html 源文件。
+-   只能指定一个目录
+-   断点debug 时，实时修改文件，然后保存后会恢复到第一个断点，不用重新刷新
 
 ## Snippets 代码片段
 
