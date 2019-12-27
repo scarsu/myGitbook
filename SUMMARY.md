@@ -36,6 +36,7 @@
 
 ### FED 快捷键/命令手册/snippet
 * [计算机相关 单词书📖](tools/cs_english.md)
+* [前端 效率 小工具合集](tools/tools.md)
 * [bash - 常用命令](tools/bash.md)
 * [git - 常用命令](tools/git.md)
 * [Visual Studio Code - 快捷键/命令](tools/vsc.md)
