@@ -1,7 +1,7 @@
 # Summary
 
 ### About
-* [关于本书](README.md)
+* [ScarSu's Gitbook](README.md)
 * [www.scarsu.com](https://www.scarsu.com)
 
 
