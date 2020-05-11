@@ -13,6 +13,6 @@
 
 <center>
     <p>本站暂时不再更新内容</p>
-    <p>内容已经全部迁移至<a href="scarsu.com">作者主站</a></p>
+    <p>内容已经全部迁移至<a href="https://www.scarsu.com">作者主站</a></p>
     <p>（FYI by ScarSu 2020.5.11）</p>
 </center>
