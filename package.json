@@ -19,7 +19,6 @@
         "gitbook-plugin-pageview-count": "^1.0.1",
         "gitbook-plugin-search-pro": "^2.0.2",
         "gitbook-plugin-sharing-plus": "^0.0.2",
-        "gitbook-plugin-fontsettings": "^0.0.2",
         "gitbook-plugin-splitter": "^0.0.8"
     },
     "devDependencies": {},
