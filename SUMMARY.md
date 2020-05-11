@@ -1,8 +1,8 @@
 # Summary
 
 ### About
-* [ScarSu's Gitbook](README.md)
-* [www.scarsu.com](https://www.scarsu.com)
+<!-- * [ScarSu's Gitbook](README.md) -->
+* [作者主站www.scarsu.com](https://www.scarsu.com)
 
 
 <!-- ### 译文系列 -->
